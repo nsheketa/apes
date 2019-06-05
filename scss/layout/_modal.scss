@@ -1,0 +1,113 @@
+#overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(247, 246, 245, 0.68);
+  z-index: 99;
+  display: none;
+  @include transition(0.3s all ease-in-out);
+}
+
+.showreel__modal-wrap{
+  background: url("#{$imgUrl}general/bg.jpg")no-repeat center/cover;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: calc(100% - 100px);
+  height: auto;
+  max-height: 95vh;
+  overflow: hidden;
+  border: 3px solid $textColor;
+  margin: auto;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  @include transition(0.3s all ease-in-out);
+  z-index: -1;
+  display: none;
+  @include box-shadow(19px, 18px, 0, rgba(50, 53, 54, 0.60));
+  &.is-open{
+    z-index: 100;
+    @include display-flex();
+  }
+
+  @include respond-max(1024){
+
+  }
+
+}
+
+.showreel__modal{
+  background-color:  rgba(247,246,245, 0.5);
+
+  position: relative;
+  padding: 55px 100px;
+  width: 100%;
+
+  video{
+    width: 100%;
+    height: auto;
+    @include transition-03();
+  }
+}
+
+.modal__close{
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  border: none;
+  background-color: transparent;
+  z-index: 101;
+  display: block;
+  outline: none !important;
+  cursor: pointer;
+  @include square(35px);
+  svg{
+    display: block;
+    fill: none;
+    stroke: #171718;
+    @include square(100%);
+    @include transition-03();
+    &>*{
+      @include transition-03();
+    }
+  }
+
+  &:hover, &:focus, &:active{
+    svg{
+      fill: #171718;
+      .plus{
+        stroke: rgba(247,246,245, 1);
+      }
+    }
+  }
+}
+
+.showreel__modal-shadow{
+  position: absolute;
+  right: -20px;
+  top: 20px;
+  @include square(100%);
+  background-color: rgba(50,52,54,0.8);
+  z-index: -1;
+  @include transition-03();
+}
+
+.showreel__modal-inner{
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 44.25%;
+  video{
+    width: auto;
+    height: 90%;
+    margin: auto;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}

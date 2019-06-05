@@ -1,0 +1,27 @@
+$Avenir: 'Avenir Next Condensed', sans-serif;
+
+$baseFontFamily: $Avenir;
+
+@mixin font-size($size:18) {
+  font-size: $size * 1px;
+  font-size: ($size / $baseFontSize) * 1rem;
+}
+
+$baseFontSize: 18;
+$baseFontSizePixel: $baseFontSize * 1px;
+
+$baseLineHeight: 1.4;
+$baseLetterSpacing: 0px;
+$textColor: #323536;
+$bodyBackground: #ece4dc;
+
+$darkColor: #171819;
+$blueColor: #202a43;
+$goldColor: #ae976d;
+$greyColor: #b4b6b7;
+$darkGreyColor: #808284;
+$darkTextColor: #231f20;
+
+$fontsUrl: "../fonts/";
+$imgUrl: "../img/";
+

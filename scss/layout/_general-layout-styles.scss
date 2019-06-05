@@ -1,0 +1,61 @@
+body,
+html {
+  height: auto;
+  &.no-scroll {
+    overflow: hidden;
+    max-height: 100%;
+  }
+}
+
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+  background: url("#{$imgUrl}general/bg.jpg")repeat center /cover;
+}
+
+.is-mobile{
+  display: block;
+
+  @include respond-min(1025){
+    display: none;
+  }
+}
+
+
+.page-content__wrap{
+  height: 100vh;
+  min-height: 800px;
+  width: 100%;
+  @include display-flex();
+  @include ai-flex-center();
+  @include jc-flex-center();
+  overflow: hidden;
+  padding: 100px 70px;
+
+  @include respond-max(768){
+    padding: 50px;
+    min-height: 640px;
+  }
+}
+
+@media screen and (max-height: 800px){
+  .page-content__wrap{
+    padding: 50px 15px;
+  }
+}
+
+.page-content{
+  border-right: 2px solid $textColor;
+  border-bottom: 2px solid $textColor;
+  @include square(100%);
+  position: relative;
+  @include display-flex();
+  @include ai-flex-center();
+  @include flex-wrap();
+  padding: 20px 50px;
+
+  @include respond-max(768){
+    border: none;
+    padding: 0;
+  }
+}

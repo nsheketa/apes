@@ -1,0 +1,128 @@
+.page-socials{
+  position: absolute;
+  //background: url("#{$imgUrl}general/bg.jpg")no-repeat 93% 28%/1600px 900px;
+  top: -47px;
+  right: 35px;
+  width: auto;
+  padding: 30px 20px;
+  text-align: center;
+  z-index: 10;
+
+  &:before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    right: 100%;
+    margin: auto;
+    height: 2px;
+    width: 56.22vw;
+    width: calc(100vw - 452px - 47px - 131px);
+    background-color: $textColor;
+  }
+  &:after{
+    content: '';
+    display: block;
+    position: absolute;
+    right: -37px;
+    top:  0;
+    bottom: 0;
+    margin: auto;
+    height: 2px;
+    width: 47px;
+    background-color: $textColor;
+  }
+
+  @include respond-max(768){
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    margin: auto;
+    width: 100%;
+    max-width: 100%;
+    &:before, &:after{
+      display: none;
+    }
+    &:before{
+      content: '';
+      display: block;
+      background: url("#{$imgUrl}general/separator.svg")no-repeat center /cover;
+      height: 2px;
+      width: calc(100vw + 100px);
+      position: absolute;
+      top: 0px;
+      left: -50px;
+      right: 0;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media screen and (max-height: 800px){
+  .page-socials{
+
+    &:before{
+      width: calc(100vw - 452px - 47px - 108px);
+    }
+  }
+}
+
+.page-socials__list{
+  text-align: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  @include font-size(17);  // 15px
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: auto;
+}
+
+.page-socials__list-item{
+  display: inline-block;
+  margin: 0 20px;
+  vertical-align: middle;
+
+  &.is-active{
+    border: 2px solid #171819;
+    background: rgba(247,246,245,0.5);
+    padding: 3px 20px;
+    @include box-shadow-custom();
+    .page-socials__list-link{
+      font-weight: 300;
+    }
+  }
+
+  @include respond-max(768){
+    &:first-of-type{
+      display: none;
+    }
+  }
+}
+
+.page-socials__list-link{
+  display: block;
+  svg{
+    display: block;
+    height: 25px;
+    max-width: 30px;
+    fill: $textColor;
+    @include transition-03();
+  }
+
+  &:hover, &:focus, &:active{
+    svg{
+      fill: #fff;
+
+    }
+  }
+}
+
+@media screen and (max-height: 500px) and (max-width: 812px){
+  .page-nav__socials{
+    margin: 5vh auto 0;
+    position: relative;
+  }
+}

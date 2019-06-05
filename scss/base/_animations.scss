@@ -1,0 +1,62 @@
+@-webkit-keyframes move-on-hover {
+  0%, 100% {
+    @include translateY(0);
+  }
+  25%, 75% {
+    @include translateY(3px);
+  }
+  50% {
+    @include translateY(2px);
+  }
+}
+
+@keyframes move-on-hover {
+  0%, 100% {
+    @include translateY(0);
+  }
+  25%, 75% {
+    @include translateY(3px);
+  }
+  50% {
+    @include translateY(2px);
+  }
+}
+
+@-webkit-keyframes showreel {
+  0%, 100% {
+    -webkit-transform: translate(0,0) rotateX(0);
+    transform: translate(0,0) rotateX(0);
+  }
+  25%{
+    -webkit-transform: translate(-2px, -7px) rotateX(2deg);
+    transform: translate(-2px, -7px) rotateX(2deg);
+  }
+  50% {
+    -webkit-transform: translate(2px, -5px) rotateX(-2deg);
+    transform: translate(2px, -5px) rotateX(-2deg);
+  }
+  75% {
+    -webkit-transform: translate(-2px,7px) rotateX(1deg);
+    transform: translate(-2px,7px) rotateX(1deg);
+  }
+}
+
+@keyframes showreel {
+  0%, 100% {
+    -webkit-transform: translate(0,0) rotateX(0);
+    transform: translate(0,0) rotateX(0);
+}
+  25%{
+    -webkit-transform: translate(-2px, -7px) rotateX(2deg);
+    transform: translate(-2px, -7px) rotateX(2deg);
+  }
+ 50% {
+   -webkit-transform: translate(2px, -5px) rotateX(-2deg);
+   transform: translate(2px, -5px) rotateX(-2deg);
+  }
+  75% {
+    -webkit-transform: translate(-2px,7px) rotateX(1deg);
+    transform: translate(-2px,7px) rotateX(1deg);
+  }
+}
+

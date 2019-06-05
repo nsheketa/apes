@@ -1,0 +1,73 @@
+@font-face {
+  font-family: 'Avenir Next Condensed';
+  src: url('#{$fontsUrl}AvenirNextCondensed-Heavy.eot');
+  src: url('#{$fontsUrl}AvenirNextCondensed-Heavy.eot?#iefix') format('embedded-opentype'),
+  url('#{$fontsUrl}AvenirNextCondensed-Heavy.woff2') format('woff2'),
+  url('#{$fontsUrl}AvenirNextCondensed-Heavy.woff') format('woff'),
+  url('#{$fontsUrl}AvenirNextCondensed-Heavy.ttf') format('truetype'),
+  url('#{$fontsUrl}AvenirNextCondensed-Heavy.svg#AvenirNextCondensed-Heavy') format('svg');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Avenir Next Condensed Demi';
+  src: url('#{$fontsUrl}AvenirNextCondensed-DemiBold.eot');
+  src: url('#{$fontsUrl}AvenirNextCondensed-DemiBold.eot?#iefix') format('embedded-opentype'),
+  url('#{$fontsUrl}AvenirNextCondensed-DemiBold.woff2') format('woff2'),
+  url('#{$fontsUrl}AvenirNextCondensed-DemiBold.woff') format('woff'),
+  url('#{$fontsUrl}AvenirNextCondensed-DemiBold.ttf') format('truetype'),
+  url('#{$fontsUrl}AvenirNextCondensed-DemiBold.svg#AvenirNextCondensed-DemiBold') format('svg');
+  font-weight: 600;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Avenir Next Condensed';
+  src: url('#{$fontsUrl}AvenirNextCondensed-Bold.eot');
+  src: url('#{$fontsUrl}AvenirNextCondensed-Bold.eot?#iefix') format('embedded-opentype'),
+  url('#{$fontsUrl}AvenirNextCondensed-Bold.woff2') format('woff2'),
+  url('#{$fontsUrl}AvenirNextCondensed-Bold.woff') format('woff'),
+  url('#{$fontsUrl}AvenirNextCondensed-Bold.ttf') format('truetype'),
+  url('#{$fontsUrl}AvenirNextCondensed-Bold.svg#AvenirNextCondensed-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Avenir Next Condensed';
+  src: url('#{$fontsUrl}AvenirNextCondensed-Regular.eot');
+  src: url('#{$fontsUrl}AvenirNextCondensed-Regular.eot?#iefix') format('embedded-opentype'),
+  url('#{$fontsUrl}AvenirNextCondensed-Regular.woff2') format('woff2'),
+  url('#{$fontsUrl}AvenirNextCondensed-Regular.woff') format('woff'),
+  url('#{$fontsUrl}AvenirNextCondensed-Regular.ttf') format('truetype'),
+  url('#{$fontsUrl}AvenirNextCondensed-Regular.svg#AvenirNextCondensed-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Avenir Next Condensed';
+  src: url('#{$fontsUrl}AvenirNextCondensed-Medium.eot');
+  src: url('#{$fontsUrl}AvenirNextCondensed-Medium.eot?#iefix') format('embedded-opentype'),
+  url('#{$fontsUrl}AvenirNextCondensed-Medium.woff2') format('woff2'),
+  url('#{$fontsUrl}AvenirNextCondensed-Medium.woff') format('woff'),
+  url('#{$fontsUrl}AvenirNextCondensed-Medium.ttf') format('truetype'),
+  url('#{$fontsUrl}AvenirNextCondensed-Medium.svg#AvenirNextCondensed-Medium') format('svg');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Avenir Next Condensed Ultra';
+  src: url('#{$fontsUrl}AvenirNextCondensed-UltraLight.eot');
+  src: url('#{$fontsUrl}AvenirNextCondensed-UltraLight.eot?#iefix') format('embedded-opentype'),
+  url('#{$fontsUrl}AvenirNextCondensed-UltraLight.woff2') format('woff2'),
+  url('#{$fontsUrl}AvenirNextCondensed-UltraLight.woff') format('woff'),
+  url('#{$fontsUrl}AvenirNextCondensed-UltraLight.ttf') format('truetype'),
+  url('#{$fontsUrl}AvenirNextCondensed-UltraLight.svg#AvenirNextCondensed-UltraLight') format('svg');
+  font-weight: 200;
+  font-style: normal;
+}
+
