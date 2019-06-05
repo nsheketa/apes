@@ -9,46 +9,55 @@
   @include transition-04();
   z-index: 10;
 
-  &:before{
+  &:before {
     content: '';
     display: block;
     position: absolute;
-    top: -35px;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 2px;
-    height: 35px;
-    background-color: $textColor;
+    //top: -35px;
+    //left: 0;
+    //right: 0;
+    //margin: auto;
+    //width: 2px;
+    //height: 35px;
+    //background-color: $textColor;
   }
-  &:after{
-    content: '';
-    display: block;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    margin: auto;
-    width: 2px;
-    height: calc(100vh - 200px - 55px - 398px);
-    margin-top: 20px;
-    background-color: $textColor;
+  &:after {
+    //content: '';
+    //display: block;
+    //position: absolute;
+    //top: 100%;
+    //left: 0;
+    //right: 0;
+    //margin: auto;
+    //width: 2px;
+    //height: calc(100vh - 200px - 55px - 398px);
+    //margin-top: 20px;
+    //background-color: $textColor;
   }
 
   @include respond-max(1400) {
-    &:after{
+    &:after {
       height: calc(100vh - 200px - 35px - 398px);
       margin-top: 0;
     }
   }
-  @include respond-max(768){
+  @include respond-max(768) {
+    position: fixed;
+    top: 0;
+    left: 0 !important;
+    right: 0;
+    bottom: 0;
+    margin: auto;
     opacity: 0;
     visibility: hidden;
     z-index: -1;
     width: 100vw;
     height: 100vh;
-    @include translateX(-100%);
-    &:before, &:after{
+    padding-top: 150px;
+    padding-bottom: 150px;
+    background: url("#{$imgUrl}general/bg.jpg") no-repeat center /cover;
+    @include translateX(100%);
+    &:before, &:after {
       display: none;
     }
 
@@ -59,14 +68,13 @@
       @include translateX(0);
     }
   }
-
 }
 
-@media screen and (max-height: 800px){
-  .page-nav{
+@media screen and (max-height: 800px) and (orientation: landscape) {
+  .page-nav {
     left: -42px;
 
-    &:after{
+    &:after {
       height: 267px;
     }
   }
@@ -78,16 +86,16 @@
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  @include font-size(17);  // 15px
+  @include font-size(17); // 15px
   font-weight: 600;
   text-transform: uppercase;
 
   @include respond-max(1025) {
     position: relative;
   }
-  @include respond-max(768){
-    width: 100%;
-    height: 100%;
+  @include respond-max(768) {
+    width: auto;
+    height: auto;
     text-align: center;
     margin: 0;
     padding: 0;
@@ -97,9 +105,14 @@
 .page-nav__list-item {
   display: block;
   margin-bottom: 20px;
-    &.page-nav__logo{
-      width: 60px;
+  max-width: 140px;
+  @include center();
+  &.page-nav__logo {
+    width: 60px;
+    img {
+      width: 100%;
     }
+  }
 
   &:last-of-type {
     margin-bottom: 0;
@@ -109,28 +122,27 @@
     .page-nav__list-link {
       color: #fff;
     }
-    &.is-active{
+    &.is-active {
       .page-nav__list-link {
         color: $textColor;
       }
     }
   }
-  &.is-active{
+  &.is-active {
     border: 2px solid #171819;
-    background: rgba(247,246,245,0.5);
+    background: rgba(247, 246, 245, 0.5);
     padding: 3px 20px;
     @include box-shadow-custom();
-    .page-nav__list-link{
+    .page-nav__list-link {
       font-weight: 100;
     }
   }
-  @include respond-max(768){
-    &:first-of-type{
+  @include respond-max(768) {
+    max-width: 120px;
+    @include center();
+    &:first-of-type {
       display: none;
     }
-  }
-  @include respond-max(360){
-    //margin-bottom: 15px;
   }
 }
 
@@ -142,8 +154,8 @@
   @include transition-03();
 
   &:hover, &:focus, &:active {
-    .page-nav__list-svg{
-      text{
+    .page-nav__list-svg {
+      text {
         paint-order: stroke;
         stroke: #000;
         stroke-width: 2px;
@@ -151,14 +163,10 @@
         stroke-linejoin: miter;
       }
     }
-
-    @include respond-max(1025) {
-
-    }
   }
 }
 
-.page-nav__list-svg{
+.page-nav__list-svg {
   font-weight: 700;
   font-family: $baseFontFamily;
   fill: $textColor;
@@ -166,11 +174,30 @@
   @include transition-03();
   @include square(100%);
 
-  text{
+  text {
     font-weight: 700;
     font-family: $baseFontFamily;
     fill: $textColor;
     font-size: 15px;
     @include transition-03();
   }
- }
+}
+
+/*============Landing page nav============*/
+.page-nav.landing-page {
+  &:before, &:after {
+    //display: none;
+  }
+  &:before {
+    display: block;
+    top: -42px;
+    left: 40px;
+    right: 0;
+    height: 45px;
+    width: calc(100vw - 452px - 47px - 131px);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-image: url("#{$imgUrl}general/frame-top.png");
+  }
+
+}

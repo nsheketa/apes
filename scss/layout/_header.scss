@@ -1,7 +1,13 @@
 .header{
   display: none;
   width: 100%;
+  z-index: 5;
   @include ai-flex-center();
+
+  &.is-visible{
+    z-index: 110;
+  }
+
   @include respond-max(768){
     @include display-flex();
   }
@@ -9,10 +15,10 @@
 
 .page__logo {
   display: block;
-  width: 60px;
-  max-width: 60px;
+  width: 50px;
+  max-width: 50px;
   img {
-    width: 60px;
+    width: 50px;
   }
 }
 
@@ -66,7 +72,7 @@
 
   .line {
     width: 35px;
-    height: 1px;
+    height: 2px;
     background-color: #000;
     display: block;
     margin: 8px auto;

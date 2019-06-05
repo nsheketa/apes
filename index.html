@@ -19,9 +19,11 @@
 <![endif]-->
 <div class="is-mobile"></div>
 <main class="main">
-    <div class="page-content__wrap">
+    <div class="page-content__wrap landing-page">
         <div class="page-content landing-page">
-            <nav class="page-nav">
+            <div class="landing__frame"></div>
+
+            <nav class="page-nav landing-page">
                 <ul class="page-nav__list">
                     <li class="page-nav__list-item">
                         <a href="index.html" class="page-nav__list-link page-nav__logo">
@@ -46,7 +48,7 @@
                 </ul>
             </nav>
 
-            <div class="header">
+            <div class="header landing-page">
                 <a href="index.html" class="page__logo ">
                     <img src="img/logo.svg" alt="Logo">
                 </a>
@@ -89,7 +91,7 @@
                 </h2>
             </div>
 
-            <nav class="page-socials">
+            <nav class="page-socials landing-page">
                 <ul class="page-socials__list">
                     <li class="page-socials__list-item is-active">
                         Talk to Us
@@ -164,6 +166,10 @@
 <script src="js/vendor/jquery-3.2.1.min.js"></script>
 <script src="js/vendor/bootstrap.bundle.min.js"></script>
 <script src="js/plugins.js"></script>
+
+<script src="js/vendor/TweenMax.min.js"></script>
+<script src="js/vendor/CSSRulePlugin.min.js"></script>
+<script src="js/vendor/ScrollMagic.min.js"></script>
 <script src="js/vendor/seeThru.min.js"></script>
 <script src="js/main.js"></script>
 
@@ -173,80 +179,42 @@
 </script>
 
 <script>
+    $(document).ready(function () {
+        var tl = new TimelineMax({
+            repeat: 0
+        });
+        var item_00 = $('.page-content__wrap.landing-page');
+        var item_01 = $('.landing__animation-video');
+        var item_01_mob = $('.header.landing-page');
+        var item_02 = $('.page-nav.landing-page');
+        var item_02_01 = CSSRulePlugin.getRule('.page-nav.landing-page:before');
+        var item_03 = $('.landing__frame');
+        // var item_03_01 = $('.landing__frame:after');
+        // var item_03_02 = $('.landing__frame:before');
+        var item_04 = $('.page-socials');
+        var item_05 = $('.landing__production');
+        var item_06 = $('.landing__heading');
 
-//    (function($){
-//        var outputCanvas = document.getElementById('output'),
-//            output = outputCanvas.getContext('2d'),
-//            bufferCanvas = document.getElementById('buffer'),
-//            buffer = bufferCanvas.getContext('2d'),
-//            video = document.getElementById('video'),
-//            width = outputCanvas.width,
-//            height = outputCanvas.height,
-//            interval;
-//
-//        function processFrame() {
-//            buffer.drawImage(video, 0, 0);
-//
-//            // this can be done without alphaData, except in Firefox which doesn't like it when image is bigger than the canvas
-//            var	image = buffer.getImageData(0, 0, width, height),
-//                imageData = image.data,
-//                alphaData = buffer.getImageData(0, height, width, height).data;
-//
-//            for (var i = 3, len = imageData.length; i < len; i = i + 4) {
-//                imageData[i] = alphaData[i-1];
-//            }
-//
-//            output.putImageData(image, 0, 0, 0, 0, width, height);
-//        }
-//
-//        function randomColourVal() {
-//            return Math.floor( Math.random() * 256 );
-//        }
-//
-//        video.addEventListener('play', function() {
-//            clearInterval(interval);
-//            interval = setInterval(processFrame, 40)
-//        }, false);
-//
-//        // Firefox doesn't support looping video, so we emulate it this way
-//        video.addEventListener('ended', function() {
-//            video.play();
-//        }, false);
-//
-//        document.getElementById('randomBg').addEventListener('click', function(event) {
-//            document.body.style.backgroundColor = 'rgb(' + randomColourVal() + ',' + randomColourVal() + ',' + randomColourVal() + ')';
-//            event.preventDefault();
-//        }, false);
-//
-//        document.getElementById('start').addEventListener('click', function(event) {
-//            video.play();
-//            event.preventDefault();
-//        }, false);
-//
-//        document.getElementById('stop').addEventListener('click', function(event) {
-//            video.pause();
-//            clearInterval(interval);
-//            event.preventDefault();
-//        }, false);
-//
-//        document.getElementById('toggleProcessing').addEventListener('click', function(event) {
-//            var toShow = video,
-//                toHide = outputCanvas;
-//
-//            if (video.style.display == 'block') {
-//                toShow = outputCanvas;
-//                toHide = video;
-//            }
-//
-//            toShow.style.display = 'block';
-//            toHide.style.display = 'none';
-//
-//            event.preventDefault();
-//        }, false);
-//
-//        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-//        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-//    })(jQuery);
+        var item_03_01 = CSSRulePlugin.getRule(".landing__frame:after"),
+            item_03_02 = CSSRulePlugin.getRule(".landing__frame:before");
+
+
+        tl.to(item_00, 0.2, {opacity: 1, ease: Power3.easeIn})
+            .staggerTo(item_01, 1, {opacity: 0.3, ease: Power3.easeIn}, '+=0.4')
+            .staggerTo(item_01_mob, 1, {opacity: 1, y:0, ease: Power3.easeIn}, '+=0.4')
+            .staggerTo(item_02, 0.4, {opacity: 1, x: 0, ease: Power3.easeIn}, '+=0.4')
+            .staggerTo(item_02_01, 0.4,
+                {cssRule: {opacity: 1}, ease: Power3.easeIn}, '+=0.4')
+            // .staggerTo(item_03_01, 0.7,
+            //     {cssRule: {opacity: 1}, ease: Power3.easeOut}, '+=0.4')
+            // .staggerTo(item_03_02, 0.7,
+            //     {cssRule: {opacity: 1}, ease: Power3.easeOut}, '+=0.4')
+            .staggerTo(item_03, 0.7, {opacity: 1, ease: Power3.easeIn}, '+=0.4')
+            .staggerTo(item_04, 0.7, {opacity: 1, y: 0, ease: Power3.easeIn}, '+=0.4')
+            .staggerTo(item_05, 0.7, {opacity: 1, y: 0, ease: Power3.easeIn}, '+=0.4')
+            .staggerTo(item_06, 0.7, {opacity: 1, x: 0, ease: Power3.easeIn}, '+=0.4')
+
+    });
 
 </script>
 </body>

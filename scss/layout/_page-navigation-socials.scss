@@ -42,27 +42,16 @@
     margin: auto;
     width: 100%;
     max-width: 100%;
+    padding-bottom: 0;
     &:before, &:after{
       display: none;
     }
-    &:before{
-      content: '';
-      display: block;
-      background: url("#{$imgUrl}general/separator.svg")no-repeat center /cover;
-      height: 2px;
-      width: calc(100vw + 100px);
-      position: absolute;
-      top: 0px;
-      left: -50px;
-      right: 0;
-      margin: 0 auto;
-    }
+
   }
 }
 
-@media screen and (max-height: 800px){
+@media screen and (max-height: 800px) and (orientation: landscape){
   .page-socials{
-
     &:before{
       width: calc(100vw - 452px - 47px - 108px);
     }
@@ -78,6 +67,25 @@
   font-weight: 600;
   text-transform: uppercase;
   margin: auto;
+
+  @include respond-max(768){
+    @include display-flex();
+    @include jc-space-between();
+    width: 100%;
+    &:before{
+      content: '';
+      display: block;
+      background: url("#{$imgUrl}general/separator.svg")no-repeat center /cover;
+      height: 2px;
+      width: calc(100% + 110px);
+      position: absolute;
+      top: 10px;
+      left: -15px;
+      right: 0;
+      margin: 0 auto;
+
+    }
+  }
 }
 
 .page-socials__list-item{
@@ -118,11 +126,18 @@
 
     }
   }
+  @include respond-max(768){
+    svg{
+      max-width: 35px;
+      height: 40px;
+    }
+  }
 }
 
-@media screen and (max-height: 500px) and (max-width: 812px){
-  .page-nav__socials{
-    margin: 5vh auto 0;
-    position: relative;
+
+/*============Landing page nav============*/
+.page-socials.landing-page{
+  &:before, &:after{
+    display: none;
   }
 }

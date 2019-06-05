@@ -1,0 +1,111 @@
+.page-content__wrap{
+  height: 100vh;
+  min-height: 800px;
+  width: 100%;
+  @include display-flex();
+  @include ai-flex-center();
+  @include jc-flex-center();
+  overflow: hidden;
+  padding: 100px 70px;
+
+  @include respond-max(768){
+    padding: 30px 15px;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
+  @include respond-max(576){
+    padding: 30px 15px;
+  }
+}
+
+@media screen and (max-height: 800px) and (orientation: landscape){
+  .page-content__wrap{
+    padding: 50px;
+  }
+}
+
+.page-content{
+  border-right: 2px solid $textColor;
+  border-bottom: 2px solid $textColor;
+  @include square(100%);
+  position: relative;
+  @include display-flex();
+  @include ai-flex-center();
+  @include flex-wrap();
+  padding: 20px 50px;
+
+  @include respond-max(768){
+    min-height: 550px;
+    border: none;
+    padding: 0;
+    @include flex-nowrap();
+    @include flex-direction-col();
+    @include jc-space-between();
+  }
+}
+
+.page-content.landing-page{
+  border: none;
+}
+
+/*Frames*/
+
+.landing__frame{
+  position: absolute;
+  -webkit-background-size: 100% 100%;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  @include square(100%);
+  top: 0;
+  left: 0;
+  z-index: 0;
+
+  &:before{
+    content: '';
+    display: block;
+    background: url("#{$imgUrl}general/frame-bottom.png")no-repeat bottom /100% 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 30%;
+  }
+  &:after{
+    content: '';
+    display: block;
+    background: url("#{$imgUrl}general/frame-right.png")no-repeat right /100% 100%;
+    position: absolute;
+    top: 0px;
+    right: 0;
+    height: 59%;
+    width: 24px;
+  }
+
+  @include respond-max(1400){
+    &:before{
+      height: 36%;
+    }
+    &:after{
+      height: 54%;
+      -webkit-background-size: 60% 100%;
+      background-size: 60% 100%;
+    }
+  }
+  @include respond-max(1024){
+    &:before{
+      //height: 36%;
+    }
+    &:after{
+      height: 45%;
+    }
+  }
+
+  @include respond-max(768){
+    &:before, &:after{
+      display: none;
+    }
+  }
+}
