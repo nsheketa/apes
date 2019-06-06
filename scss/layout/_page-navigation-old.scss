@@ -1,12 +1,46 @@
 .page-nav {
   position: absolute;
+  //background: url("#{$imgUrl}general/bg.jpg")no-repeat 4% 16%/1600px 900px;
   top: 35px;
   left: -42px;
   width: auto;
   padding: 30px 0 50px;
+  @include transform-origin(right);
   @include transition-04();
   z-index: 10;
-  opacity: 0;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    //top: -35px;
+    //left: 0;
+    //right: 0;
+    //margin: auto;
+    //width: 2px;
+    //height: 35px;
+    //background-color: $textColor;
+  }
+  &:after {
+    //content: '';
+    //display: block;
+    //position: absolute;
+    //top: 100%;
+    //left: 0;
+    //right: 0;
+    //margin: auto;
+    //width: 2px;
+    //height: calc(100vh - 200px - 55px - 398px);
+    //margin-top: 20px;
+    //background-color: $textColor;
+  }
+
+  @include respond-max(1400) {
+    &:after {
+      height: calc(100vh - 200px - 35px - 398px);
+      margin-top: 0;
+    }
+  }
   @include respond-max(768) {
     position: fixed;
     top: 0;
@@ -14,7 +48,7 @@
     right: 0;
     bottom: 0;
     margin: auto;
-    opacity: 0 !important;
+    opacity: 0;
     visibility: hidden;
     z-index: -1;
     width: 100vw;
@@ -22,17 +56,16 @@
     padding-top: 150px;
     padding-bottom: 150px;
     background: url("#{$imgUrl}general/bg.jpg") no-repeat center /cover;
-    -webkit-transform: translateX(100%) !important;
-    -ms-transform: translateX(100%) !important;
-    transform: translateX(100%) !important;
+    @include translateX(100%);
+    &:before, &:after {
+      display: none;
+    }
 
     &.is-active {
-      opacity: 1 !important;
-      visibility: visible !important;
-      z-index: 100 !important;
-      -webkit-transform: translateX(0) !important;
-      -ms-transform: translateX(0) !important;
-      transform: translateX(0) !important;
+      opacity: 1;
+      visibility: visible;
+      z-index: 100;
+      @include translateX(0);
     }
   }
 }
@@ -40,6 +73,10 @@
 @media screen and (max-height: 800px) and (orientation: landscape) {
   .page-nav {
     left: -42px;
+
+    &:after {
+      height: 267px;
+    }
   }
 }
 
@@ -144,4 +181,23 @@
     font-size: 15px;
     @include transition-03();
   }
+}
+
+/*============Landing page nav============*/
+.page-nav.landing-page {
+  &:before, &:after {
+    display: none;
+  }
+  &:before {
+    //display: block;
+    top: -42px;
+    left: 40px;
+    right: 0;
+    height: 45px;
+    width: calc(100vw - 452px - 47px - 131px);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-image: url("#{$imgUrl}general/frame-top.png");
+  }
+
 }

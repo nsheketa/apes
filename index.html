@@ -17,11 +17,17 @@
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
     your browser</a> to improve your experience and security.</p>
 <![endif]-->
-<div class="is-mobile"></div>
+<div class="is-mobile__landing"></div>
 <main class="main">
     <div class="page-content__wrap landing-page">
         <div class="page-content landing-page">
-            <div class="landing__frame"></div>
+            <div class="landing__frame">
+                <span class="landing__frame-top-left"></span>
+                <span class="landing__frame-top-right"></span>
+                <span class="landing__frame-bottom-right landing__frame-bottom-side"></span>
+                <span class="landing__frame-bottom"></span>
+                <span class="landing__frame-bottom-left landing__frame-bottom-side"></span>
+            </div>
 
             <nav class="page-nav landing-page">
                 <ul class="page-nav__list">
@@ -168,7 +174,6 @@
 <script src="js/plugins.js"></script>
 
 <script src="js/vendor/TweenMax.min.js"></script>
-<script src="js/vendor/CSSRulePlugin.min.js"></script>
 <script src="js/vendor/ScrollMagic.min.js"></script>
 <script src="js/vendor/seeThru.min.js"></script>
 <script src="js/main.js"></script>
@@ -179,42 +184,71 @@
 </script>
 
 <script>
-    $(document).ready(function () {
+    $(window).on('load', function () {
         var tl = new TimelineMax({
-            repeat: 0
+            repeat: 0,
+            ease: Power3.easeInOut
         });
-        var item_00 = $('.page-content__wrap.landing-page');
-        var item_01 = $('.landing__animation-video');
-        var item_01_mob = $('.header.landing-page');
-        var item_02 = $('.page-nav.landing-page');
-        var item_02_01 = CSSRulePlugin.getRule('.page-nav.landing-page:before');
-        var item_03 = $('.landing__frame');
-        // var item_03_01 = $('.landing__frame:after');
-        // var item_03_02 = $('.landing__frame:before');
-        var item_04 = $('.page-socials');
-        var item_05 = $('.landing__production');
-        var item_06 = $('.landing__heading');
 
-        var item_03_01 = CSSRulePlugin.getRule(".landing__frame:after"),
-            item_03_02 = CSSRulePlugin.getRule(".landing__frame:before");
+        function isMobile() {
+            var target = $('.is-mobile__landing');
 
+            if (target.css('display') === 'block') {
+                return true;
+            } else {
+                return false;
+            }
+        }
 
-        tl.to(item_00, 0.2, {opacity: 1, ease: Power3.easeIn})
-            .staggerTo(item_01, 1, {opacity: 0.3, ease: Power3.easeIn}, '+=0.4')
-            .staggerTo(item_01_mob, 1, {opacity: 1, y:0, ease: Power3.easeIn}, '+=0.4')
-            .staggerTo(item_02, 0.4, {opacity: 1, x: 0, ease: Power3.easeIn}, '+=0.4')
-            .staggerTo(item_02_01, 0.4,
-                {cssRule: {opacity: 1}, ease: Power3.easeIn}, '+=0.4')
-            // .staggerTo(item_03_01, 0.7,
-            //     {cssRule: {opacity: 1}, ease: Power3.easeOut}, '+=0.4')
-            // .staggerTo(item_03_02, 0.7,
-            //     {cssRule: {opacity: 1}, ease: Power3.easeOut}, '+=0.4')
-            .staggerTo(item_03, 0.7, {opacity: 1, ease: Power3.easeIn}, '+=0.4')
-            .staggerTo(item_04, 0.7, {opacity: 1, y: 0, ease: Power3.easeIn}, '+=0.4')
-            .staggerTo(item_05, 0.7, {opacity: 1, y: 0, ease: Power3.easeIn}, '+=0.4')
-            .staggerTo(item_06, 0.7, {opacity: 1, x: 0, ease: Power3.easeIn}, '+=0.4')
+        var item_00_wrap = $('.page-content__wrap.landing-page');
+        var item_01_video = $('.landing__animation-video');
+        var item_01_header_mob = $('.header.landing-page');
+        var item_02_nav = $('.page-nav.landing-page');
+        var item_03_frame_left = $('.landing__frame-top-left');
 
+        var item_04_socials = $('.page-socials');
+        var item_04_01_frame_top_right = $('.landing__frame-top-right');
+        var item_04_02_frame_bottom_right = $('.landing__frame-bottom-right');
+        var item_04_03_frame_bottom = $('.landing__frame-bottom');
+        var item_04_04_frame_bottom_left = $('.landing__frame-bottom-left');
+
+        var item_05_production = $('.landing__production');
+        var item_06_heading = $('.landing__heading');
+
+        function handleAnimation() {
+            if (!isMobile()) {
+                tl.to(item_00_wrap, 0.2, {opacity: 1})
+                    .staggerFromTo(item_01_video, 0.4, {opacity: 0}, {opacity: 0.3}, '+=0.2')
+                    .staggerFromTo(item_01_header_mob, 1,{opacity: 0, y: -30}, {opacity: 1, y: 0}, '+=0.2')
+                    .staggerFromTo(item_02_nav, 0.3, {opacity: 0, x: -50}, {opacity: 1, x: 0}, '+=0.2')
+
+                    .staggerFromTo(item_03_frame_left, 0.2, {opacity: 0, scaleX: 0, transformOrigin: 'left bottom'}, {opacity: 1, scaleX: 1}, '+=0.2')
+
+                    .staggerFromTo(item_04_socials, 0.3, {opacity: 0, y: -50}, {opacity: 1, y: 0}, '+=0.2')
+                    .staggerFromTo(item_04_01_frame_top_right, 0.2, {opacity: 0, scaleY: 0, transformOrigin: 'top'}, {opacity: 1, scaleY: 1}, 0.1, 'frame')
+                    .staggerFromTo(item_04_02_frame_bottom_right, 0.2, {opacity: 0, scaleY: 0, transformOrigin: "top"}, {opacity: 1, scaleY: 1}, 0.1)
+                    .staggerFromTo(item_04_03_frame_bottom, 0.2, {opacity: 0, scaleX: 0, transformOrigin: 'right'}, {opacity: 1, scaleX: 1}, 0, 'frame')
+                    .staggerFromTo(item_04_04_frame_bottom_left, 0.2, {opacity: 0, scaleY: 0, transformOrigin: 'bottom'}, {opacity: 1, scaleY: 1}, 0.1)
+
+                    .staggerFromTo(item_05_production, 0.3, {opacity: 0, y: 30}, {opacity: 1, y: 0}, '-=0.2')
+                    .staggerFromTo(item_06_heading, 0.3, {opacity: 0, x: -50}, {opacity: 1, x: 0}, '+=0.2');
+
+                $('.page-content__wrap.landing-page').addClass('was-animated');
+
+            } else {
+                tl.to(item_00_wrap, 0.2, {opacity: 1})
+                    .staggerFromTo(item_01_video, 0.4, {opacity: 0}, {opacity: 0.3}, '+=0.2')
+                    .staggerFromTo(item_01_header_mob, 0.5, {opacity: 0, y: -30}, {opacity: 1, y: 0}, '+=0.2')
+                    .staggerFromTo(item_04_socials, 0.3, {opacity: 0, y: -50}, {opacity: 1, y: 0}, '+=0.2')
+                    .staggerFromTo(item_05_production, 0.3, {opacity: 0, y: 30}, {opacity: 1, y: 0}, '-=0.2')
+                    .staggerFromTo(item_06_heading, 0.3, {opacity: 0, x: -50}, {opacity: 1, x: 0}, '+=0.2');
+
+                $('.page-content__wrap.landing-page').addClass('was-animated');
+            }
+        }
+        handleAnimation();
     });
+
 
 </script>
 </body>

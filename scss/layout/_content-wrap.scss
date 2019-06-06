@@ -1,4 +1,4 @@
-.page-content__wrap{
+.page-content__wrap {
   height: 100vh;
   min-height: 800px;
   width: 100%;
@@ -8,24 +8,24 @@
   overflow: hidden;
   padding: 100px 70px;
 
-  @include respond-max(768){
+  @include respond-max(768) {
     padding: 30px 15px;
     min-height: 100vh;
     overflow-x: hidden;
     overflow-y: visible;
   }
-  @include respond-max(576){
+  @include respond-max(576) {
     padding: 30px 15px;
   }
 }
 
-@media screen and (max-height: 800px) and (orientation: landscape){
-  .page-content__wrap{
+@media screen and (max-height: 800px) and (orientation: landscape) {
+  .page-content__wrap {
     padding: 50px;
   }
 }
 
-.page-content{
+.page-content {
   border-right: 2px solid $textColor;
   border-bottom: 2px solid $textColor;
   @include square(100%);
@@ -35,7 +35,7 @@
   @include flex-wrap();
   padding: 20px 50px;
 
-  @include respond-max(768){
+  @include respond-max(768) {
     min-height: 550px;
     border: none;
     padding: 0;
@@ -45,13 +45,24 @@
   }
 }
 
-.page-content.landing-page{
+/*---------Landing page---------*/
+
+.page-content__wrap.landing-page{
+  opacity: 0;
+  &.was-animated{
+    .page-nav{
+      opacity: 1;
+    }
+  }
+}
+
+.page-content.landing-page {
   border: none;
 }
 
 /*Frames*/
 
-.landing__frame{
+.landing__frame {
   position: absolute;
   -webkit-background-size: 100% 100%;
   background-size: 100% 100%;
@@ -62,50 +73,101 @@
   left: 0;
   z-index: 0;
 
-  &:before{
+  @include respond-max(768) {
+    display: none;
+  }
+}
+
+.landing__frame-top-left {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  width: calc(100vw - 452px - 47px - 131px);
+  background-color: $textColor;
+
+  &:before {
     content: '';
     display: block;
-    background: url("#{$imgUrl}general/frame-bottom.png")no-repeat bottom /100% 100%;
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 30%;
+    top: 2px;
+    width: 2px;
+    height: 45px;
+    background-color: $textColor;
   }
-  &:after{
+}
+
+.landing__frame-top-right {
+  position: absolute;
+  top: 0px;
+  right: 0;
+  height: 59%;
+  width: 2px;
+  background-color: $textColor;
+
+  &:before {
     content: '';
     display: block;
-    background: url("#{$imgUrl}general/frame-right.png")no-repeat right /100% 100%;
+    background-color: $textColor;
+    width: 40px;
+    height: 2px;
     position: absolute;
-    top: 0px;
-    right: 0;
-    height: 59%;
-    width: 24px;
+    left: -40px;
+    top: 0;
   }
 
-  @include respond-max(1400){
-    &:before{
-      height: 36%;
-    }
-    &:after{
-      height: 54%;
-      -webkit-background-size: 60% 100%;
-      background-size: 60% 100%;
-    }
+  @include respond-max(1400) {
+    height: 54%;
   }
-  @include respond-max(1024){
-    &:before{
-      //height: 36%;
-    }
-    &:after{
-      height: 45%;
-    }
+  @include respond-max(1024) {
+    height: 45%
   }
 
-  @include respond-max(768){
-    &:before, &:after{
+  @include respond-max(768) {
+    &:before {
       display: none;
     }
   }
+}
+
+.landing__frame-bottom-side {
+  position: absolute;
+  bottom: 0;
+  width: 2px;
+  height: 30%;
+  background-color: $textColor;
+
+  @include respond-max(1400) {
+    height: 36%;
+  }
+
+  @include respond-max(768) {
+    display: none;
+  }
+}
+
+@media screen and (width: 1024px) and (height: 1366px) {
+  .landing__frame-bottom-side{
+    height: 42%;
+  }
+}
+
+.landing__frame-bottom-left {
+  left: 0;
+}
+
+.landing__frame-bottom-right {
+  right: 0;
+}
+
+.landing__frame-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background-color: $textColor;
 }

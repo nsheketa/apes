@@ -4,3 +4,5 @@
 
 *.idea
 *.sass-cache
+*.scss/layout/_page-navigation-old.scss
+*.scss/layout/_page-navigation-socials-old.scss

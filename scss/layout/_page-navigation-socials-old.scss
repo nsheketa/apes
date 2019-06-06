@@ -1,11 +1,38 @@
 .page-socials{
   position: absolute;
+  //background: url("#{$imgUrl}general/bg.jpg")no-repeat 93% 28%/1600px 900px;
   top: -47px;
   right: 35px;
   width: auto;
   padding: 30px 20px;
   text-align: center;
   z-index: 10;
+
+  &:before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    right: 100%;
+    margin: auto;
+    height: 2px;
+    width: 56.22vw;
+    width: calc(100vw - 452px - 47px - 131px);
+    background-color: $textColor;
+  }
+  &:after{
+    content: '';
+    display: block;
+    position: absolute;
+    right: -37px;
+    top:  0;
+    bottom: 0;
+    margin: auto;
+    height: 2px;
+    width: 47px;
+    background-color: $textColor;
+  }
 
   @include respond-max(768){
     position: relative;
@@ -16,6 +43,10 @@
     width: 100%;
     max-width: 100%;
     padding-bottom: 0;
+    &:before, &:after{
+      display: none;
+    }
+
   }
 }
 
@@ -103,3 +134,10 @@
   }
 }
 
+
+/*============Landing page nav============*/
+.page-socials.landing-page{
+  &:before, &:after{
+    display: none;
+  }
+}

@@ -21,4 +21,10 @@ body {
   }
 }
 
+.is-mobile__landing{
+  display: block;
 
+  @include respond-min(768){
+    display: none;
+  }
+}

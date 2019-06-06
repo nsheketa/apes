@@ -39,7 +39,7 @@ $(document).ready(function () {
 
     $('.landing__production-play').on('click', function (e) {
         e.preventDefault();
-        $("#overlay").fadeIn(200);
+        $("#overlay").fadeIn();
         $('.showreel__modal-wrap').addClass('is-open is-shadowed');
         $('body', 'html').addClass('no-scroll');
     });
@@ -47,7 +47,7 @@ $(document).ready(function () {
     $('.modal__close').on('click', function (e) {
         // e.stopPropagation();
         $('.showreel__modal-wrap').removeClass('is-open is-shadowed');
-        $("#overlay").fadeOut(200);
+        $("#overlay").fadeOut();
         $('body', 'html').removeClass('no-scroll');
     });
 
@@ -56,8 +56,8 @@ $(document).ready(function () {
         if ($('showreel__modal-wrap').hasClass('is-open')) {
             if (!$(e.target).closest('.showreel__modal-wrap.is-open').length || !$(e.target).closest('#overlay').length ) {
                 $('.showreel__modal-wrap.is-open').find('video').get(0).pause();
-                $('.showreel__modal-wrap.is-open').removeClass('is-open is-shadowed').fadeOut(200);
-                $('#overlay').fadeOut(200);
+                $('.showreel__modal-wrap.is-open').removeClass('is-open is-shadowed').fadeOut();
+                $('#overlay').fadeOut();
                 $('body', 'html').removeClass('no-scroll');
             }
         }
