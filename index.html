@@ -36,8 +36,8 @@
                             <img src="img/logo.svg" alt="Apes">
                         </a>
                     </li>
-                    <li class="page-nav__list-item is-active">
-                        <a href="#" class="page-nav__list-link">Work</a>
+                    <li class="page-nav__list-item">
+                        <a href="work.html" class="page-nav__list-link">Work</a>
                     </li>
                     <li class="page-nav__list-item">
                         <a href="#" class="page-nav__list-link">Clients</a>
@@ -184,6 +184,10 @@
 </script>
 
 <script>
+    $(document).ready(function () {
+        var video = $('.landing__animation-video').get(0).play();
+    });
+
     $(window).on('load', function () {
         var tl = new TimelineMax({
             repeat: 0,
@@ -193,11 +197,7 @@
         function isMobile() {
             var target = $('.is-mobile__landing');
 
-            if (target.css('display') === 'block') {
-                return true;
-            } else {
-                return false;
-            }
+            if (target.css('display') === 'block') {return true;} else {return false;}
         }
 
         var item_00_wrap = $('.page-content__wrap.landing-page');
@@ -218,17 +218,35 @@
         function handleAnimation() {
             if (!isMobile()) {
                 tl.to(item_00_wrap, 0.2, {opacity: 1})
-                    .staggerFromTo(item_01_video, 0.4, {opacity: 0}, {opacity: 0.3}, '+=0.2')
-                    .staggerFromTo(item_01_header_mob, 1,{opacity: 0, y: -30}, {opacity: 1, y: 0}, '+=0.2')
+                    .staggerFromTo(item_01_video, 0.3, {opacity: 0}, {opacity: 0.3}, '+=0.2')
                     .staggerFromTo(item_02_nav, 0.3, {opacity: 0, x: -50}, {opacity: 1, x: 0}, '+=0.2')
-
-                    .staggerFromTo(item_03_frame_left, 0.2, {opacity: 0, scaleX: 0, transformOrigin: 'left bottom'}, {opacity: 1, scaleX: 1}, '+=0.2')
+                    .staggerFromTo(item_03_frame_left, 0.2, {
+                        opacity: 0,
+                        scaleX: 0,
+                        transformOrigin: 'left bottom'
+                    }, {opacity: 1, scaleX: 1}, '+=0.2')
 
                     .staggerFromTo(item_04_socials, 0.3, {opacity: 0, y: -50}, {opacity: 1, y: 0}, '+=0.2')
-                    .staggerFromTo(item_04_01_frame_top_right, 0.2, {opacity: 0, scaleY: 0, transformOrigin: 'top'}, {opacity: 1, scaleY: 1}, 0.1, 'frame')
-                    .staggerFromTo(item_04_02_frame_bottom_right, 0.2, {opacity: 0, scaleY: 0, transformOrigin: "top"}, {opacity: 1, scaleY: 1}, 0.1)
-                    .staggerFromTo(item_04_03_frame_bottom, 0.2, {opacity: 0, scaleX: 0, transformOrigin: 'right'}, {opacity: 1, scaleX: 1}, 0, 'frame')
-                    .staggerFromTo(item_04_04_frame_bottom_left, 0.2, {opacity: 0, scaleY: 0, transformOrigin: 'bottom'}, {opacity: 1, scaleY: 1}, 0.1)
+                    .staggerFromTo(item_04_01_frame_top_right, 0.2, {
+                        opacity: 0,
+                        scaleY: 0,
+                        transformOrigin: 'top'
+                    }, {opacity: 1, scaleY: 1}, 0.1, 'frame')
+                    .staggerFromTo(item_04_02_frame_bottom_right, 0.2, {
+                        opacity: 0,
+                        scaleY: 0,
+                        transformOrigin: "top"
+                    }, {opacity: 1, scaleY: 1}, 0.1)
+                    .staggerFromTo(item_04_03_frame_bottom, 0.2, {
+                        opacity: 0,
+                        scaleX: 0,
+                        transformOrigin: 'right'
+                    }, {opacity: 1, scaleX: 1}, 0, 'frame')
+                    .staggerFromTo(item_04_04_frame_bottom_left, 0.2, {
+                        opacity: 0,
+                        scaleY: 0,
+                        transformOrigin: 'bottom'
+                    }, {opacity: 1, scaleY: 1}, 0.1)
 
                     .staggerFromTo(item_05_production, 0.3, {opacity: 0, y: 30}, {opacity: 1, y: 0}, '-=0.2')
                     .staggerFromTo(item_06_heading, 0.3, {opacity: 0, x: -50}, {opacity: 1, x: 0}, '+=0.2');
@@ -237,7 +255,7 @@
 
             } else {
                 tl.to(item_00_wrap, 0.2, {opacity: 1})
-                    .staggerFromTo(item_01_video, 0.4, {opacity: 0}, {opacity: 0.3}, '+=0.2')
+                    .staggerFromTo(item_01_video, 0.3, {opacity: 0}, {opacity: 0.3}, '+=0.2')
                     .staggerFromTo(item_01_header_mob, 0.5, {opacity: 0, y: -30}, {opacity: 1, y: 0}, '+=0.2')
                     .staggerFromTo(item_04_socials, 0.3, {opacity: 0, y: -50}, {opacity: 1, y: 0}, '+=0.2')
                     .staggerFromTo(item_05_production, 0.3, {opacity: 0, y: 30}, {opacity: 1, y: 0}, '-=0.2')
@@ -246,6 +264,7 @@
                 $('.page-content__wrap.landing-page').addClass('was-animated');
             }
         }
+
         handleAnimation();
     });
 

@@ -13,16 +13,18 @@
 @import "base/animations";
 @import "base/helpers";
 
-@import "layout/container-inner";
 @import "layout/general-layout-styles";
 @import "layout/content-wrap";
+@import "layout/landing-frame";
+@import "layout/inner-pages-frame";
 @import "layout/header";
 @import "layout/page-navigation";
 @import "layout/page-navigation-socials";
 @import "layout/modal";
 
-//@import "components/_img-fallback";
+@import "components/_img-fallback";
 @import "components/landing";
+@import "components/work";
 
 @import "pages/homepage";
 

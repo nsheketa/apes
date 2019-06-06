@@ -48,7 +48,18 @@
       width: 768px;
     }
   }
+  @include respond-max(576){
 
+    video{
+
+    }
+  }
+}
+
+@media screen and (min-width: 2500px) and (min-height: 1800px){
+  .landing__animation-wrap{
+    height: 30%;
+  }
 }
 
 .home__animation-svg{
@@ -63,7 +74,6 @@
   margin: auto;
   z-index: 0;
 }
-
 
 /*---------production---------*/
 .landing__production{
@@ -90,6 +100,16 @@
       left: -15px;
       right: 0;
       margin: auto;
+    }
+  }
+}
+
+@media screen and (max-height: 600px) and (orientation: landscape) {
+  .landing__production {
+    top: 0;
+    &:before{
+      left: 0;
+      width: 100%;
     }
   }
 }
@@ -288,6 +308,12 @@
     h2{
       font-weight: 400;
     }
+  }
+}
+
+@media screen and (max-height: 600px) and (orientation: landscape) {
+  .landing__heading {
+    top: 0;
   }
 }
 

@@ -70,6 +70,11 @@
   -o-transition: ($property);
   transition: ($property);
 }
+@mixin transition-delay($property) {
+  -webkit-transition-delay: ($property);
+  -o-transition-delay: ($property);
+  transition-delay: ($property);
+}
 
 @mixin transform($property) {
   -webkit-transform: $property;
