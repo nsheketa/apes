@@ -9,7 +9,7 @@
   left: 0;
   z-index: 0;
 
-  @include respond-max(768) {
+  @include respond-max(1024) {
     display: none;
   }
 }

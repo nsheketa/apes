@@ -11,7 +11,7 @@
   &.landing-page{
     opacity: 0;
   }
-  @include respond-max(768) {
+  @include respond-max(1024) {
     @include display-flex();
     @include jc-flex-center();
     @include ai-flex-center();
@@ -65,7 +65,7 @@
   @include respond-max(1025) {
     position: relative;
   }
-  @include respond-max(768) {
+  @include respond-max(1024) {
     width: auto;
     height: auto;
     text-align: center;
@@ -78,6 +78,7 @@
   display: block;
   margin-bottom: 20px;
   max-width: 140px;
+  position: relative;
   @include center();
   .page-nav__logo {
     width: 80px;
@@ -122,7 +123,7 @@
       font-weight: 100;
     }
   }
-  @include respond-max(768) {
+  @include respond-max(1024) {
     max-width: 120px;
     margin-bottom: 4vh;
     @include center();
@@ -149,22 +150,5 @@
         stroke-linejoin: miter;
       }
     }
-  }
-}
-
-.page-nav__list-svg {
-  font-weight: 700;
-  font-family: $baseFontFamily;
-  fill: $textColor;
-  font-size: 15px;
-  @include transition-03();
-  @include square(100%);
-
-  text {
-    font-weight: 700;
-    font-family: $baseFontFamily;
-    fill: $textColor;
-    font-size: 15px;
-    @include transition-03();
   }
 }

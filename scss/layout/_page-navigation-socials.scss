@@ -7,7 +7,7 @@
   text-align: center;
   z-index: 10;
 
-  @include respond-max(768){
+  @include respond-max(1024){
     position: relative;
     top: auto;
     left: auto;
@@ -37,7 +37,7 @@
   text-transform: uppercase;
   margin: auto;
 
-  @include respond-max(768){
+  @include respond-max(1024){
     @include display-flex();
     @include jc-space-between();
     width: 100%;
@@ -47,13 +47,19 @@
       display: block;
       background: url("#{$imgUrl}general/separator.svg")no-repeat center /cover;
       height: 2px;
-      width: calc(100% + 110px);
+      width: 100%;
       position: absolute;
       top: 10px;
-      left: -15px;
+      left: 0;
       right: 0;
       margin: 0 auto;
 
+    }
+  }
+  @include respond-max(768){
+    &:before{
+      width: calc(100% + 110px);
+      left: -15px;
     }
   }
 }
@@ -82,7 +88,7 @@
     }
   }
 
-  @include respond-max(768){
+  @include respond-max(1024){
     &:first-of-type{
       display: none;
     }
@@ -105,7 +111,7 @@
 
     }
   }
-  @include respond-max(768){
+  @include respond-max(1024){
     svg{
       max-width: 35px;
       height: 40px;

@@ -11,6 +11,14 @@ body {
   overflow-x: hidden;
   max-width: 100%;
   background: url("#{$imgUrl}general/bg.jpg")repeat center /cover;
+
+  @include respond-max(1024){
+    background: url("#{$imgUrl}general/bg-mob.jpg")repeat center /contain;
+    &.landing-page{
+      -webkit-background-size: cover;
+      background-size: cover;
+    }
+  }
 }
 
 .is-mobile{
