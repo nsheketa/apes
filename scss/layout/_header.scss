@@ -1,14 +1,29 @@
 .header {
   display: none;
   width: 100%;
-  z-index: 5;
   @include ai-flex-center();
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  padding: 10px 15px;
+  background: url("#{$imgUrl}general/bg-mob.jpg")repeat-y center /100% auto;
+  border: 3px solid $textColor;
+  border-bottom: none;
+  z-index: 110;
+  opacity: 0;
 
   &.is-visible {
     z-index: 110 !important;
+    transition-delay: 0.2s;
+    background: transparent;
     & > *{
       z-index: 110 !important;
     }
+  }
+
+  &.work-page{
+    background-position: center;
   }
 
   @include respond-max(1024) {
@@ -18,7 +33,7 @@
 
 @media screen and (max-height: 600px) and (orientation: landscape) {
   .header {
-    margin-top: 95px;
+
   }
 }
 
@@ -39,15 +54,16 @@
 
   &:hover, &:focus, &:active {
     img {
-      -webkit-transform: rotate(-180deg) translateY(-6px) scale(1.07);
-      -ms-transform: rotate(-180deg) translateY(-6px) scale(1.07);
-      transform: rotate(-180deg) translateY(-6px) scale(1.07);
+      -webkit-transform: scale(1.07);
+      -ms-transform: scale(1.07);
+      transform: scale(1.07);
     }
   }
 }
 
 .header__separator {
-  background: url("#{$imgUrl}general/separator.svg") no-repeat center /cover;
+  background: url("#{$imgUrl}general/separator.svg")repeat-x center /cover;
+  //border: 1px dashed $textColor;
   height: 2px;
   -webkit-box-flex: 1;
   -ms-flex: 1 0 auto;
@@ -75,19 +91,19 @@
       -o-transition-delay: 0.2s;
       transition-delay: 0.2s;
       &:nth-child(1) {
-        -webkit-transform: translateY(10px) rotate(45deg);
-        -ms-transform: translateY(10px) rotate(45deg);
-        -o-transform: translateY(10px) rotate(45deg);
-        transform: translateY(10px) rotate(45deg);
+        -webkit-transform: translateY(12px) rotate(45deg);
+        -ms-transform: translateY(12px) rotate(45deg);
+        -o-transform: translateY(12px) rotate(45deg);
+        transform: translateY(12px) rotate(45deg);
       }
       &:nth-child(2) {
         opacity: 0;
       }
       &:nth-child(3) {
-        -webkit-transform: translateY(-9px) rotate(-45deg);
-        -ms-transform: translateY(-9px) rotate(-45deg);
-        -o-transform: translateY(-9px) rotate(-45deg);
-        transform: translateY(-9px) rotate(-45deg);
+        -webkit-transform: translateY(-12px) rotate(-45deg);
+        -ms-transform: translateY(-12px) rotate(-45deg);
+        -o-transform: translateY(-12px) rotate(-45deg);
+        transform: translateY(-12px) rotate(-45deg);
       }
     }
   }
@@ -101,7 +117,8 @@
 
   .line {
     width: 35px;
-    height: 2px;
+    height: 4px;
+    border-radius: 10px;
     background-color: #000;
     display: block;
     margin: 8px auto;

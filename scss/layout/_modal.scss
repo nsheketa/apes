@@ -4,8 +4,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  //background-color: rgba(247, 246, 245, 0.68);
-  background-color: rgba(144,144,144, 0.68);
+  background-color: rgba(50, 53, 54, 0.5);
   @include transition(0.3s all ease-in-out);
   opacity: 0;
   visibility: hidden;
@@ -13,7 +12,7 @@
   &.is-visible{
     opacity: 1;
     visibility: visible;
-    z-index: 99;
+    z-index: 200;
   }
 }
 
@@ -39,7 +38,7 @@
   visibility: hidden;
 
   &.is-open{
-    z-index: 100;
+    z-index: 201;
     opacity: 1;
     visibility: visible;
     &:after{
@@ -50,10 +49,16 @@
     @include box-shadow(19px, 18px, 0, rgba(50, 53, 54, 0.60));
     transition-delay: 0.3s;
   }
+
+  @include respond-max(1024){
+    &.is-shadowed{
+      box-shadow: none;
+    }
+  }
   @include respond-max(768){
     width: calc(100% - 20px);
     &.is-shadowed{
-      @include box-shadow(10px, 8x, 0, rgba(50, 53, 54, 0.60));
+      //@include box-shadow(10px, 8x, 0, rgba(50, 53, 54, 0.60));
     }
   }
 }
@@ -63,6 +68,10 @@
   position: relative;
   padding: 55px 100px;
   width: 100%;
+
+  @include respond-max(1024){
+    padding: 0;
+  }
 }
 
 .modal__close{
@@ -79,7 +88,7 @@
   svg{
     display: block;
     fill: none;
-    stroke: #171718;
+    stroke: $textColor;
     @include square(100%);
     @include transition-03();
     &>*{
@@ -89,12 +98,18 @@
 
   &:hover, &:focus, &:active{
     svg{
-      fill: #171718;
+      fill: rgba(50, 53, 54, 0.8);
       .plus{
         stroke: rgba(247,246,245, 1);
       }
     }
   }
+  @include respond-max(1024){
+    //display: none;
+    right: 0;
+    top: 0;
+  }
+
   @include respond-max(768){
     @include square(25px);
     right: 3px;
@@ -126,5 +141,14 @@
     left: 0;
     right: 0;
     bottom: 0;
+  }
+
+  @include respond-max(1024){
+    padding-bottom: 56.25%;
+
+    video{
+      width: 100%;
+      height: auto;
+    }
   }
 }

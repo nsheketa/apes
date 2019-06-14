@@ -7,7 +7,7 @@
   @include square(100%);
   top: 0;
   left: 0;
-  z-index: 0;
+  z-index: -1;
 
   @include respond-max(1024) {
     display: none;
@@ -21,7 +21,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  width: calc(100vw - 452px - 47px - 131px);
+  width: calc(100vw - 452px - 131px);
   background-color: $textColor;
 
   &:before {
@@ -30,7 +30,7 @@
     position: absolute;
     top: 2px;
     width: 2px;
-    height: 90px;
+    height: 105px;
     background-color: $textColor;
   }
 }
@@ -70,7 +70,8 @@
   bottom: 0;
   left: 0;
   width: 2px;
-  height: calc(100% - 450px);
+  //height: calc(100% - 450px);
+  height: calc(100% - 460px);
   background-color: $textColor;
 }
 

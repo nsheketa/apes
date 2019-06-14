@@ -340,6 +340,6 @@
 }
 
 @mixin box-shadow-custom(){
-  -webkit-box-shadow: 4px 4px 0 $textColor;
-  box-shadow: 4px 4px 0 $textColor;
+  -webkit-box-shadow: 4px 4px 0 rgba(50, 53, 54, 0.7);
+  box-shadow: 4px 4px 0 rgba(50, 53, 54, 0.7);
 }

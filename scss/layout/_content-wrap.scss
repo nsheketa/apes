@@ -7,13 +7,34 @@
   @include jc-flex-center();
   overflow: hidden;
   padding: 100px 70px;
+  opacity: 0;
 
+  &.was-animated {
+    .header {
+      opacity: 1;
+    }
+  }
+
+  &.was-animated {
+    .page-nav {
+      opacity: 1;
+    }
+    .landing__frame {
+      opacity: 1;
+    }
+    .page-socials {
+      opacity: 1;
+    }
+  }
   @include respond-max(1024) {
-    padding: 30px 15px;
+    padding: 30px 15px 100px;
     min-height: 100vh;
     overflow-x: hidden;
     overflow-y: visible;
+    border: 3px solid $textColor;
+
   }
+
   @include respond-max(576) {
     padding: 30px 15px;
   }
@@ -21,7 +42,7 @@
 
 @media screen and (max-height: 800px) and (orientation: landscape) {
   .page-content__wrap {
-    padding: 50px;
+    padding: 50px 70px;
   }
 }
 
@@ -37,55 +58,95 @@
   }
 }
 
-/*---------Landing page---------*/
+/*---------Inner pages---------*/
+.page-content__wrap.inner-pages {
 
-.page-content__wrap{
-  //opacity: 0;
-  &.was-animated{
-    .page-nav{
-      opacity: 1;
+  @include respond-max(1024) {
+    height: auto;
+  }
+}
+
+.page-content.inner-pages {
+  padding: 100px 70px 20px;
+
+  &.p-100 {
+    padding: 100px 70px;
+  }
+
+  @include respond-max(1024) {
+    height: auto;
+    padding: 0;
+
+    &.p-100 {
+      padding: 0;
     }
   }
 }
 
-.page-content.landing-page{
+.inner-pages__container {
+  padding: 0 20px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  max-height: 100%;
+  @include respond-max(1024){
+    padding: 0;
+  }
+}
+
+/*--------Landing page---------*/
+.page-content.landing-page {
   @include display-flex();
   @include ai-flex-center();
   @include flex-wrap();
 
-  @include respond-max(1024){
+  @include respond-max(1024) {
     @include flex-nowrap();
     @include flex-direction-col();
     @include jc-space-between();
   }
 }
 
+/*---------work detail page---------*/
 
-/*---------Inner pages---------*/
-.page-content__wrap.inner-pages{
-
-  @include respond-max(1024){
-    height: auto;
-  }
+.page-content__wrap.work-detail-page {
+  height: auto;
 }
 
-.page-content.inner-pages{
-  padding: 100px 70px 20px;
+.page-content.work-detail-page {
+  min-height: 700px;
+  padding: 70px 0 50px 70px;
 
-  @include respond-max(1024){
-    //padding-top: 50px;
-  }
-  @include respond-max(1024){
-    height: auto;
+  @include respond-max(1024) {
+    display: block;
     padding: 0;
   }
 }
 
-.inner-pages__container{
-  padding: 0 20px;
-  width: 100%;
-  position: relative;
-  overflow: hidden;
-  max-height: 100%;
-  //padding-top: 90px;
+
+/*---------clients page---------*/
+
+.page-content.clients-page {
+  padding-right: 30px;
+
+  @include respond-max(1024){
+    padding-right: 0;
+  }
+}
+
+
+/*---------About page---------*/
+
+.page-content__wrap.about-page {
+  height: auto;
+  min-height: 100vh;
+}
+
+.page-content.about-page{
+  min-height: 700px;
+  padding: 50px 0 50px 70px;
+  @include respond-max(1024) {
+    height: auto;
+    padding: 0;
+  }
 }

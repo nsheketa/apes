@@ -1,0 +1,31 @@
+.mfp-bg {
+  background: rgba(50, 53, 54, 0.5) !important;
+}
+
+button.mfp-close {
+  cursor: pointer;
+  color: #fff;
+  opacity: 1;
+  font-size: 44px;
+  font-family: $baseFontFamily !important;
+}
+
+button.mfp-close, button.mfp-arrow{
+  opacity: 1 !important;
+}
+
+.mfp-counter {
+  color: #fff;
+  display: none;
+}
+
+.mfp-arrow:before{
+  opacity: 1 !important;
+}
+
+.mfp-arrow-right:before{
+  border-left: 27px solid $textColor !important;
+}
+.mfp-arrow-left:before{
+  border-right: 27px solid $textColor !important;
+}

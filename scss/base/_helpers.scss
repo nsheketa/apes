@@ -1,13 +1,13 @@
 .show-in-mob{
   display: none !important;
-  @include respond-max(1025){
+  @include respond-max(1024){
     display: block !important;
   }
 }
 
 .hide-in-mob{
   display: block !important;
-  @include respond-max(1025){
+  @include respond-max(1024){
     display: none !important;
   }
 }

@@ -10,6 +10,7 @@
   top: 0;
   left: 0;
   z-index: 0;
+  opacity: 0;
 
   @include respond-max(1024) {
     display: none;
@@ -23,7 +24,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  width: calc(100vw - 452px - 47px - 131px);
+  width: calc(100vw - 452px - 131px);
   background-color: $textColor;
 
   &:before {
@@ -32,7 +33,7 @@
     position: absolute;
     top: 2px;
     width: 2px;
-    height: 90px;
+    height: 105px;
     background-color: $textColor;
   }
 }
@@ -57,7 +58,7 @@
   }
 
   @include respond-max(1400) {
-    height: 54%;
+    height: 56%;
   }
   @include respond-max(1024) {
     height: 47%
@@ -72,7 +73,7 @@
   background-color: $textColor;
 
   @include respond-max(1400) {
-    height: 36%;
+    height: 32%;
   }
 
   @include respond-max(1024) {

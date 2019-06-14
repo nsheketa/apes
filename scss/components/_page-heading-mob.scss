@@ -1,0 +1,59 @@
+.page__heading-mob{
+  @include respond-max(1024) {
+    //margin: 70px auto 70px;
+    //padding-top: 40px;
+
+    //@include animation(title-float, 25, 0, infinite);
+    //@include animation-timing-function(linear);
+    //@include animation-fill-mode(both);
+  }
+}
+
+.heading__line{
+  position: absolute;
+  width: 45%;
+  height: 2px;
+  background-color: #211d1e;
+  &:after{
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #211d1e;
+  }
+}
+
+.heading__line--top{
+  top: 4px;
+  left: 0;
+  @include animation(line-float,33, 0.3, infinite);
+  animation-direction: alternate-reverse;
+  @include animation-fill-mode(both);
+  @include animation-timing-function(ease-in-out);
+  &:after{
+    left: 40px;
+    bottom: -10px;
+    @include animation(line-float-reverse, 28, -0.9, infinite);
+    animation-direction: alternate-reverse;
+    @include animation-fill-mode(both);
+    @include animation-timing-function(ease-in-out);
+  }
+}
+
+.heading__line--bottom{
+  bottom: -25px;
+  left: 45%;
+  @include animation(line-float-reverse, 30, 0, infinite);
+  animation-direction: alternate-reverse;
+  @include animation-fill-mode(both);
+  @include animation-timing-function(ease-in-out);
+  &:after{
+    left: 40px;
+    bottom: -10px;
+    @include animation(line-float, 25, 0.3, infinite);
+    animation-direction: alternate-reverse;
+    @include animation-fill-mode(both);
+    @include animation-timing-function(ease-in-out);
+  }
+}

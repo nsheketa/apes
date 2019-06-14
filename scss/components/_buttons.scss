@@ -1,63 +1,29 @@
 /*-------------Button-----------------*/
-.button {
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  @include ai-flex-center();
-  @include jc-flex-center();
-  font-family: $Avenir;
-  line-height: 1;
-  @include font-size(19);
-  text-transform: capitalize;
-  font-weight: 300;
-  text-align: center;
-  white-space: nowrap;
-  border-radius: 2px;
-  padding: 10px 20px;
-  @include transition-03();
-  position: relative;
-  outline: none !important;
+.button-svg {
+  display: block;
+  width: 20px;
+  height: 15px;
+  cursor: pointer;
+  @include center();
 
-  &.button--grey{
-    color: #fff;
-    border: 1px solid #fff;
-    background-color: transparent;
-
+  &.is-inactive {
+    //opacity: 0.5;
+    pointer-events: none;
   }
-  &.button--gold{
-    color: #fff;
-    border: 1px solid #fff;
-    background-color: transparent;
+  & > * {
+    @include transition-03();
   }
 
-  &.button--blue{
-    color: #fff;
-    border: 1px solid #fff;
-    background-color: transparent;
-  }
-
-  &:hover,
-  &:focus,
-  &:active {
-
-    &.button--grey{
-      border: 1px solid #fff;
-      background-color: #fff;
-      color: $greyColor;
+  &:hover {
+    polygon.arrow-inner {
+      fill: rgba(50, 53, 56, 0.8);
     }
-    &.button--gold{
-      color: $goldColor;
-      border: 1px solid #fff;
-      background-color: #fff;
+    path.arrow-border {
+      stroke: #fff;
+      fill: #fff;
     }
-    &.button--blue{
-      color: $blueColor;
-      border: 1px solid #fff;
-      background-color: #fff;
+    polygon.arrow-shadow {
+      opacity: 0;
     }
-  }
-
-  @include respond-max(576){
-    @include font-size(15);
   }
 }

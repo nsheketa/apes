@@ -20,27 +20,30 @@
 }
 
 .main-scene {
-  opacity: 0;
-  @include transition-04();
   &.is-loaded{
-    opacity: 1;
+    //opacity: 1 !important;
+  }
+  &.is-loading{
   }
   &.is-exiting {
-    opacity: 0;
     .scene_element {
       animation-direction: alternate-reverse;
     }
   }
 
   .scene__element {
-    animation-duration: 1s;
     @include animation-duration(1);
     @include animation-fill-mode(both);
     @include animation-timing-function(ease-in);
   }
 
   /** An element that fades in */
-  .scene__element--fadein {
-    @include animation-name(fade_in);
+  &.scene__element--fadein {
+    //@include animation-name(fadeIn);
+    //@include animation-duration(1);
+    //@include animation-fill-mode(both);
+    //@include animation-timing-function(ease-in);
+    opacity: 0;
+    @include transition(0.4s all ease);
   }
 }
