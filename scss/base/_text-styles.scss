@@ -38,6 +38,17 @@ h3, .h3 {
   }
 }
 
+h4, .h4 {
+  font-size: 20px;
+  font-weight: 500;
+  @include respond-max(1350) {
+    font-size: 18px;
+  }
+  @include respond-max(1024) {
+    font-size: 16px;
+  }
+}
+
 p {
   font-size: 20px;
   font-weight: 300;

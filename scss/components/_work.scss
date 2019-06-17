@@ -12,7 +12,7 @@
   position: absolute;
   left: 10px;
   top: -60px;
-  background: url("#{$imgUrl}general/separator-vertical.svg")no-repeat center/cover;
+  background: url("#{$imgUrl}general/separator-vertical.svg") no-repeat center/cover;
   width: 2px;
   height: 60px;
   &:before {
@@ -23,7 +23,7 @@
     top: 60px;
     width: 15px;
     height: 2px;
-    background: url("#{$imgUrl}general/separator.svg")no-repeat center /cover;
+    background: url("#{$imgUrl}general/separator.svg") no-repeat center /cover;
   }
 
   @include respond-max(1440) {
@@ -39,7 +39,7 @@
   position: absolute;
   top: -60px;
   left: 10px;
-  background: url("#{$imgUrl}general/separator.svg")repeat-x center /contain;
+  background: url("#{$imgUrl}general/separator.svg") repeat-x center /contain;
   width: calc(100vw - 140px - 152px);
   height: 2px;
   @include respond-max(1440) {
@@ -51,7 +51,7 @@
   position: absolute;
   left: calc(100vw - 140px - 138px);
   top: -60px;
-  background: url("#{$imgUrl}general/separator-vertical.svg")no-repeat center/cover;
+  background: url("#{$imgUrl}general/separator-vertical.svg") no-repeat center/cover;
   height: 400px;
   width: 2px;
 
@@ -62,7 +62,7 @@
 
 .work-nav__pointer-link {
   position: absolute;
-  left: -10px;
+  left: -8px;
 
   &.list-scroll__link--up {
     bottom: -17px;
@@ -111,8 +111,8 @@
       @include animation-fill-mode(both);
     }
   }
-  @include respond-max(576){
-    margin-top: 50px;
+  @include respond-max(576) {
+    //margin-top: 50px;
   }
 }
 
@@ -140,7 +140,7 @@
 }
 
 @media screen and (max-height: 800px) and (orientation: landscape) {
-  .work-list__wrap{
+  .work-list__wrap {
     height: 486px;
   }
 }
@@ -168,9 +168,9 @@
         @include transform-scale(1.05, 1.05);
       }
     }
-    @include respond-max(768){
+    @include respond-max(768) {
       .work-list__item-content {
-       @include translateY(0);
+        @include translateY(0);
       }
     }
   }
@@ -249,8 +249,8 @@
     margin: 3px auto;
     background-color: #000;
   }
-  @include respond-max(768){
-    &:after{
+  @include respond-max(768) {
+    &:after {
       //display: none;
     }
   }

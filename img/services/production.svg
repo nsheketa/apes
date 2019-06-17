@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg enable-background="new 0 0 335.6 245" version="1.1" viewBox="0 0 335.6 245" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+				<polyline points="2 197 2 167 144 167 144 197" fill="#F5F6F4" opacity=".6"/>
+					<rect x="1" y="167" width="142" height="30" fill="none" opacity=".6" stroke="#010101" stroke-miterlimit="10" stroke-width="2"/>
+					<text transform="translate(-.2515 187.74)" fill="#010101" font-family="'AvenirNextCondensed-DemiBold'" font-size="16.578">2D & 3D animation</text>
+				<polyline points="60 125 60 95 144 95 144 125" fill="#F5F6F4" opacity=".6"/>
+					<rect x="60" y="95" width="84" height="29" fill="none" opacity=".6" stroke="#010101" stroke-miterlimit="10" stroke-width="2"/>
+					<text transform="translate(72.931 115.74)" fill="#010101" font-family="'AvenirNextCondensed-DemiBold'" font-size="16.578">Editing</text>
+				<polyline points="2 161 2 131 144 131 144 161" fill="#F5F6F4" opacity=".6"/>
+					<rect x="1" y="131" width="142" height="30" fill="none" opacity=".6" stroke="#010101" stroke-miterlimit="10" stroke-width="2"/>
+					<text transform="translate(7.0952 151.74)" fill="#010101" font-family="'AvenirNextCondensed-DemiBold'" font-size="16.578">Graphics design</text>
+				<polyline points="193 208 193 178 335 178 335 208" fill="#F5F6F4" opacity=".6"/>
+					<rect x="192" y="178" width="142" height="30" fill="none" opacity=".6" stroke="#010101" stroke-miterlimit="10" stroke-width="2"/>
+					<text transform="translate(202.08 198.74)" fill="#010101" font-family="'AvenirNextCondensed-DemiBold'" font-size="16.578">Color-grading</text>
+				<polyline points="193 244 193 214 335 214 335 244" fill="#F5F6F4" opacity=".6"/>
+					<rect x="192" y="214" width="142" height="30" fill="none" opacity=".6" stroke="#010101" stroke-miterlimit="10" stroke-width="2"/>
+					<text transform="translate(215.88 234.74)" fill="#010101" font-family="'AvenirNextCondensed-DemiBold'" font-size="16.578">Voice-overs</text>
+		<polyline points="168 78 168 232 192 232" fill="none" stroke="#010101" stroke-dasharray="5" stroke-miterlimit="10" stroke-width="2"/>
+			<line x1="143" x2="167" y1="110" y2="110" fill="none" stroke="#010101" stroke-dasharray="5" stroke-miterlimit="10" stroke-width="2"/>
+			<line x1="143" x2="167" y1="146" y2="146" fill="none" stroke="#010101" stroke-dasharray="5" stroke-miterlimit="10" stroke-width="2"/>
+			<line x1="143" x2="167" y1="182" y2="182" fill="none" stroke="#010101" stroke-dasharray="5" stroke-miterlimit="10" stroke-width="2"/>
+			<line x1="168" x2="192" y1="195" y2="195" fill="none" stroke="#010101" stroke-dasharray="5" stroke-miterlimit="10" stroke-width="2"/>
+			<polyline points="329 77 329 1 103 1 103 77" fill="#F5F6F4" opacity=".6"/>
+			<line x1="324" x2="172" y1="1" y2="1" fill="none" stroke="#181919" stroke-width="2"/>
+			<polyline points="103 53 103 77 329 77 329 1 324 1" fill="none" stroke="#181919" stroke-width="2"/>
+			<text transform="translate(159.66 36.739)" fill="#010101" font-family="'AvenirNextCondensed-DemiBold'" font-size="30"><tspan x="0" y="0">Post</tspan><tspan x="0" y="26">production</tspan></text>
+		<line x1="222" x2="246" y1="27.5" y2="27.5" fill="none" stroke="#181919" stroke-width="3"/>
+</svg>
+92" y2="195"/>
+	</g>
+	<g>
+		<g>
+			<polyline opacity="0.6" fill="#F5F6F4" points="329,77 329,1 103,1 103,77 			"/>
+			<line fill="none" stroke="#181919" stroke-width="2" x1="324" y1="1" x2="172" y2="1"/>
+			<polyline fill="none" stroke="#181919" stroke-width="2" points="103,53 103,77 329,77 329,1 324,1 			"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<text transform="matrix(1 0 0 1 159.6621 36.7393)"><tspan x="0" y="0" fill="#010101" font-family="'AvenirNextCondensed-DemiBold'" font-size="30">Post</tspan><tspan x="0" y="26" fill="#010101" font-family="'AvenirNextCondensed-DemiBold'" font-size="30">production</tspan></text>
+		</g>
+		<line fill="none" stroke="#181919" stroke-width="3" x1="222" y1="27.5" x2="246" y2="27.5"/>
+	</g>
+</g>
+</svg>

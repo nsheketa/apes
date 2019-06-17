@@ -1,130 +1,574 @@
-.services__wrap{
-  padding-top: 250px;
+.services__wrap {
+  //padding-top: 250px;
+  padding-bottom: 50px;
 }
 
-.services__wrap-inner{
+.services__wrap-inner {
   position: relative;
   height: 100%;
   min-height: 100vh;
-  @include display-flex();
-  @include flex-wrap();
   padding: 0 20px;
-  border: 1px solid red;
 }
 
-.services__divider{
-  width: 100%;
-  max-width: 100%;
-}
-
-.services__info-wrap{
+.services__info-wrap {
   margin-left: auto;
-  max-width: 55%;
-  margin-top: 30px;
+  max-width: 609px;
+  //margin-top: 30px;
+  position: absolute;
+  right: 20px;
+  //top: 50px;
+  top: -50px;
+  padding-right: 30px;
+  @include respond-max(1400){
+    max-width: 536px;
+    top: -90px;
+  }
+  @include respond-max(1200){
+    max-width: 444px;
+    top: -140px;
+  }
+  @include respond-max(1024){
+    position: relative;
+    right: auto;
+    top: auto;
+    @include center();
+    padding-right: 0;
+  }
+  @include respond-max(768){
+    max-width: 100%;
+  }
 }
 
-.services__heading{
-  text-align: right;
-  img{
+.services__heading {
+  padding-left: 55px;
+  position: relative;
+  margin-bottom: 30px;
+  img {
     width: 90%;
     max-width: 500px;
     margin-left: auto;
   }
-}
-
-.services__info{
-  background: url("#{$imgUrl}services/border-01.png")no-repeat center /100% 100%;
-  padding: 40px 40px 50px;
-  text-align: center;
-  max-width: 620px;
-  margin-left: auto;
-}
-
-//.services__img{
-//  position: absolute;
-//  //top: 0;
-//  //left: 0;
-//  //right: 0;
-//  //bottom: 0;
-//  //width: auto;
-//  //height: auto;
-//  //min-width: 100%;
-//  //min-height: 100%;
-//  //z-index: 0;
-//  img{
-//    width: 100%;
-//    //height: 100%;
-//  }
-//}
-
-.services-img{
-  position: relative;
-  img{
-    width: 100%;
-  }
-  &:hover, &:focus, &:active{
-    .service-img__icon{
-      @include transform-scale(1.1,1.1);
+  @include respond-max(1024){
+    margin: 70px auto;
+    padding-top: 40px;
+    padding-left: 0;
+    text-align: center;
+    max-width: 90%;
+    @include center();
+    img{
+      @include center();
+      max-width: 100%;
+      width: 100%;
     }
   }
 }
 
-.service-img__icon{
-  position: absolute;
-  @include transition-04();
-  &:hover, &:focus, &:active{
-    @include transform-scale(1.1,1.1);
-  }
-}
-
-.service-img__sales{
-  width: 400px;
-  max-width: 400px;
-  margin-top: 60px;
-
-  .service-img__icon{
-    right: -7px;
-    top: -36px;
-    width: 55px;
-    @include animation(showreel, 15, 0, infinite);
-  }
-}
-
-.service-img__creative {
-  width: 465px;
-  max-width: 465px;
-  margin-top: -4px;
-  margin-left: 400px;
-
-  .service-img__icon {
-    left: -7px;
-    top: -54px;
-    width: 65px;
-    @include animation(showreel, 19, 2, infinite);
-  }
-}
-
-.service-img__filming{
-  width: 620px;
+.services__info {
+  padding: 20px;
+  text-align: center;
   max-width: 620px;
-  margin-left: 20px;
-  .service-img__icon {
-    left: 200px;
-    top: -25px;
-    width: 100px;
-    @include animation(showreel, 21, -5, infinite);
+  margin-left: auto;
+  border: 2px solid #000;
+  background-color: rgba(255,255,255,0.5);
+  z-index: 1;
+  position: relative;
+
+  &:before{
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: -19px;
+    right: 15%;
+    @include square(25px);
+    background: url("#{$imgUrl}services/half-circle.png")no-repeat center /contain;
+  }
+  &:after{
+    content: '';
+    display: block;
+    position: absolute;
+    //bottom: -239px;
+    //height: 225px;
+    bottom: -150px;
+    height: 140px;
+    width: 2px;
+    right: calc(15% + 11px);
+    background: url("#{$imgUrl}general/separator-vertical.svg") no-repeat center /cover;
+  }
+
+  @include respond-max(1500){
+    &:after{
+      //bottom: -309px;
+      //height: 292px;
+    }
+  }
+  @include respond-max(1400){
+    &:after{
+      //bottom: -206px;
+      //height: 193px;
+      bottom: -146px;
+    }
+  }
+
+  @include respond-max(1350){
+    &:after{
+      //bottom: -246px;
+      //height: 235px;
+      bottom: -186px;
+      height: 170px;
+    }
+  }
+  @include respond-max(1200){
+    &:after{
+      //bottom: -167px;
+      //height: 155px;
+      bottom: -158px;
+      height: 144px;
+    }
+  }
+  @include respond-max(1024){
+    @include center();
+    &:before{
+      right: -2px;
+    }
+    &:after{
+      display: none;
+    }
+  }
+  @include respond-max(768){
+    @include center();
   }
 }
 
-.service-img__production{
-  width: 450px;
-  max-width: 450px;
-  margin-left: auto;
-  margin-right: 45px;
-  .service-img__icon {
-    right: 254px;
-    top: -40px;
-    width: 70px;
-    @include animation(showreel, 21, 0, infinite);
+.service__info-border-solid{
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 90%;
+  height: 90%;
+  border-top: 2px solid #000;
+  border-right: 2px solid #000;
+  z-index: 0;
+  &:before{
+    content: '';
+    display: block;
+    width: 2px;
+    height: 18px;
+    background-color: #000;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  &:after{
+    content: '';
+    display: block;
+    width: 18px;
+    height: 2px;
+    background-color: #000;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+  @include respond-max(1024){
+    right: auto;
+    left: -20px;
+    top: auto;
+    bottom: -20px;
+    border: none;
+    border-bottom: 2px solid #000;
+    border-left: 2px solid #000;
+    &:before{
+      width: 18px;
+      height: 2px;
+    }
+    &:after{
+      height: 18px;
+      width: 2px;
+    }
   }
 }
+
+.service__info-border-dotted{
+  position: absolute;
+  bottom: -20px;
+  left: -20px;
+  @include square(80%);
+  border-bottom: 2px dashed #000;
+  border-left: 2px dashed #000;
+  z-index: 0;
+  @include respond-max(1200){
+    //bottom: -10px;
+    //left: -10px;
+  }
+  @include respond-max(1024){
+    border: none;
+    border-top: 2px dashed #000;
+    border-right: 2px dashed #000;
+    bottom: auto;
+    top: -20px;
+    left: auto;
+    right: -20px;
+  }
+}
+
+.service__info-circle-top{
+  position: absolute;
+  top: -16px;
+  left: -16px;
+  @include square(25px);
+  background: url("#{$imgUrl}services/quarter-circle.png")no-repeat center /contain;
+}
+
+.services-svg__text {
+  font-size: 17px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+  @include respond-max(1024){
+    font-size: 30px;
+  }
+}
+
+.svg-text__heading {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 30px;
+  @include respond-max(1024){
+    font-size: 55px;
+  }
+}
+
+/*--------Service scheme--------*/
+
+.services__img {
+  position: relative;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -webkit-transform: perspective(1px) translate3d(0,0,0);
+  transform: perspective(1px) translate3d(0,0,0);
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+  @include respond-max(1024){
+    margin-bottom: 60px;
+  }
+}
+
+.services__img-sales {
+  //width: 492px;
+  //max-width: 492px;
+  //margin-top: 129px;
+  width: 420px;
+  max-width: 420px;
+  margin-top: 50px;
+  @include respond-max(1500) {
+    //margin-top: 200px;
+  }
+  @include respond-max(1400) {
+    width: 390px;
+    max-width: 390px;
+    margin-left: -20px;
+    margin-top: 85px;
+  }
+  @include respond-max(1200) {
+    width: 310px;
+    max-width: 310px;
+    margin-top: 140px;
+  }
+  @include respond-max(1024){
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: 100px;
+    width: 300px;
+    max-width: 300px;
+    @include animation(showreel, 25, -5, infinite);
+  }
+  @include respond-max(576){
+    margin-right: 0;
+  }
+}
+
+.services__img-icon-ear {
+  //width: 50px;
+  width: 44px;
+  @include animation(showreel, 15, 0, infinite);
+  top: -25px;
+  //right: 134px;
+  right: 113px;
+
+  @include respond-max(1400){
+    width: 40px;
+    top: -25px;
+    right: 98px;
+  }
+  @include respond-max(1200){
+    width: 28px;
+    top: -19px;
+    right: 84px;
+  }
+  @include respond-max(1024){
+    width: 44px;
+    top: -21px;
+    right: -7px;
+  }
+}
+
+.services__img-creative {
+  //width: 660px;
+  //max-width: 660px;
+  width: 590px;
+  max-width: 590px;
+  //margin-left: 154px;
+  margin-left: 89px;
+  @include respond-max(1400){
+    width: 540px;
+    max-width: 540px;
+    margin-left: 92px;
+    margin-top: 0;
+  }
+  @include respond-max(1200){
+    width: 460px;
+    max-width: 460px;
+    margin-left: -1px;
+
+  }
+  @include respond-max(1024){
+    margin-left: 100px;
+    margin-right: auto;
+    width: 300px;
+    max-width: 300px;
+    @include animation(showreel, 25, 0, infinite);
+  }
+  @include respond-max(576){
+    margin-left: 0;
+  }
+}
+
+.services__img-icon-heart {
+  //width: 65px;
+  width: 58px;
+  @include animation(showreel, 19, 2, infinite);
+  top: -59px;
+  //left: 226px;
+  left: 206px;
+  @include respond-max(1400){
+    top: -40px;
+    left: 192px;
+    width: 49px;
+  }
+  @include respond-max(1200){
+    top: -33px;
+    left: 166px;
+    width: 39px;
+  }
+  @include respond-max(1024){
+    top: -52px;
+    left: -20px;
+    width: 53px;
+  }
+}
+
+.services__img-row {
+  @include display-flex();
+  position: relative;
+  @include respond-max(1024){
+    display: block;
+  }
+}
+
+.services__img-filming {
+  //width: 570px;
+  //max-width: 570px;
+  width: 500px;
+  max-width: 500px;
+  top: -49px;
+  margin-left: 30px;
+  @include respond-max(1400){
+    width: 465px;
+    max-width: 465px;
+    top: -32px;
+  }
+  @include respond-max(1200){
+    width: 380px;
+    max-width: 380px;
+    margin-left: -35px;
+  }
+  @include respond-max(1024){
+    margin-right: 100px;
+    margin-left: auto;
+    top: 0;
+    width: 300px;
+    max-width: 300px;
+    @include animation(showreel, 25, -9, infinite);
+  }
+  @include respond-max(576){
+    margin-right: 0;
+  }
+}
+
+.services__img-icon-eye {
+  //width: 100px;
+  width: 91px;
+  @include animation(showreel, 21, -5, infinite);
+  //top: 28px;
+  //left: 196px;
+  top: 18px;
+  left: 169px;
+  @include respond-max(1400) {
+    top: 15px;
+    left: 160px;
+    width: 85px;
+  }
+  @include respond-max(1200) {
+    top: 27px;
+    left: 127px;
+    width: 59px;
+  }
+  @include respond-max(1024){
+    top: -19px;
+    right: -14px;
+    width: 98px;
+    left: auto;
+  }
+  @include respond-max(768){
+    top: -20px;
+  }
+}
+
+.services__img-production {
+  //width: 430px;
+  //max-width: 430px;
+  width: 350px;
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: 30px;
+  top: -20px;
+  @include respond-max(1400){
+    width: 325px;
+    max-width: 325px;
+  }
+  @include respond-max(1200){
+    width: 280px;
+    max-width: 280px;
+  }
+  @include respond-max(1024){
+    margin-left: 100px;
+    margin-right: auto;
+    top: 0;
+    width: 300px;
+    max-width: 300px;
+    @include animation(showreel, 25, -4, infinite);
+  }
+  @include respond-max(576){
+    margin-left: 0;
+  }
+}
+
+.services__img-icon-hand {
+  //width: 70px;
+  width: 63px;
+  @include animation(showreel, 21, 0, infinite);
+  //top: -37px;
+  //right: 245px;
+  top: -41px;
+  right: 196px;
+  @include respond-max(1400){
+    top: -37px;
+    right: 181px;
+    width: 53px;
+  }
+  @include respond-max(1200){
+    top: -24px;
+    right: 161px;
+    width: 43px;
+  }
+  @include respond-max(1024){
+    top: -52px;
+    right: auto;
+    width: 66px;
+    left: -9px;
+  }
+}
+
+.services__img-after {
+  @include flex(1 0 auto);
+  position: absolute;
+  //width: calc(100% - 601px);
+  //height: 80px;
+  //left: -64px;
+  //right: 0;
+  //margin: auto;
+  //top: 0;
+  width: calc(100% - 521px);
+  height: 80px;
+  left: -34px;
+  right: 0;
+  margin: auto;
+  top: -14px;
+  @include respond-max(1450){
+    height: 25px;
+  }
+  @include respond-max(1400) {
+    left: -41px;
+    top: -11px;
+    width: calc(100% - 462px);
+  }
+  @include respond-max(1200){
+    left: -108px;
+    //top: -10px;
+    top: 20px;
+    width: calc(100% - 338px);
+  }
+
+}
+
+.services__img-filming-after {
+  position: absolute;
+  top: 51px;
+  left: 0;
+  width: 61%;
+  height: 72px;
+  background: url("#{$imgUrl}services/filming-after.svg") no-repeat bottom/cover;
+  @include respond-max(1750) {
+    height: 50px;
+  }
+  @include respond-max(1450) {
+    height: 25px;
+  }
+  @include respond-max(1200){
+    top: 19px;
+  }
+}
+
+.services__img-production-after {
+  position: absolute;
+  width: 41%;
+  height: 41px;
+  right: 0;
+  top: 8px;
+  background: url("#{$imgUrl}services/production-after.svg") repeat-y top/ cover;
+  @include respond-max(1920) {
+    top: 49px;
+  }
+  @include respond-max(1750) {
+    top: 23px;
+    height: 47px;
+  }
+  @include respond-max(1450) {
+    height: 28px;
+  }
+  @include respond-max(1200){
+    height: 14px;
+    top: 10px;
+  }
+}
+
+.services__img-icon {
+  position: absolute;
+  img {
+    width: 100%;
+  }
+}
+
+

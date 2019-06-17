@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg enable-background="new 0 0 459 184" version="1.1" viewBox="0 0 459 184" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+			<polyline points="2 91 2 61 144 61 144 91" fill="#F5F6F4" opacity=".6"/>
+				<rect x="1" y="61" width="142" height="30" fill="none" opacity=".6" stroke="#010101" stroke-miterlimit="10" stroke-width="2"/>
+				<text transform="translate(18.365 81.739)" fill="#010101" font-family="'AvenirNextCondensed-DemiBold'" font-size="16.578">Video filming</text>
+			<polyline points="2 128 2 98 144 98 144 128" fill="#F5F6F4" opacity=".6"/>
+				<rect x="1" y="98" width="142" height="30" fill="none" opacity=".6" stroke="#010101" stroke-miterlimit="10" stroke-width="2"/>
+				<text transform="translate(6.5366 118.41)" fill="#010101" font-family="'AvenirNextCondensed-DemiBold'" font-size="16.578">Drone shooting</text>
+			<polyline points="194 146 194 116 397 116 397 146" fill="#F5F6F4" opacity=".6"/>
+				<rect x="193" y="116" width="203" height="30" fill="none" opacity=".6" stroke="#010101" stroke-miterlimit="10" stroke-width="2"/>
+				<text transform="translate(194.47 137.07)" fill="#010101" font-family="'AvenirNextCondensed-DemiBold'" font-size="16.578">Corporate photography</text>
+			<polyline points="194 183 194 153 459 153 459 183" fill="#F5F6F4" opacity=".6"/>
+				<rect x="193" y="153" width="265" height="30" fill="none" opacity=".6" stroke="#010101" stroke-miterlimit="10" stroke-width="2"/>
+				<text transform="translate(196.19 173.74)" fill="#010101" font-family="'AvenirNextCondensed-DemiBold'" font-size="16.578">Event broadcasting & highlight</text>
+	<polyline points="168 45 168 168 190 168" fill="none" stroke="#010101" stroke-dasharray="5" stroke-miterlimit="10" stroke-width="2"/>
+		<line x1="169" x2="193" y1="132" y2="132" fill="none" stroke="#010101" stroke-dasharray="5" stroke-miterlimit="10" stroke-width="2"/>
+		<line x1="144" x2="168" y1="114" y2="114" fill="none" stroke="#010101" stroke-dasharray="5" stroke-miterlimit="10" stroke-width="2"/>
+		<line x1="144" x2="168" y1="77" y2="77" fill="none" stroke="#010101" stroke-dasharray="5" stroke-miterlimit="10" stroke-width="2"/>
+			<polyline points="43 46 43 1 210 1 210 46" fill="#F5F6F4" opacity=".6"/>
+			<line x1="47" x2="130" y1="1" y2="1" fill="none" stroke="#181919" stroke-width="2"/>
+			<polyline points="210 32 210 46 43 46 43 1 47 1" fill="none" stroke="#181919" stroke-width="2"/>
+		<text transform="translate(48.9 35.739)" fill="#010101" font-family="'AvenirNextCondensed-DemiBold'" font-size="30">Filming</text>
+</svg>
+ke-dasharray="5" x1="144" y1="77" x2="168" y2="77"/>
+	<g>
+		<g>
+			<polyline opacity="0.6" fill="#F5F6F4" points="43,46 43,1 210,1 210,46 			"/>
+			<line fill="none" stroke="#181919" stroke-width="2" x1="47" y1="1" x2="130" y2="1"/>
+			<polyline fill="none" stroke="#181919" stroke-width="2" points="210,32 210,46 43,46 43,1 47,1 			"/>
+		</g>
+	</g>
+	<g>
+		<text transform="matrix(1 0 0 1 48.9004 35.7393)" fill="#010101" font-family="'AvenirNextCondensed-DemiBold'" font-size="30">Filming</text>
+	</g>
+</g>
+</svg>

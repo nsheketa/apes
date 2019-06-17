@@ -89,7 +89,7 @@
   position: relative;
   overflow: hidden;
   max-height: 100%;
-  @include respond-max(1024){
+  @include respond-max(1024) {
     padding: 0;
   }
 }
@@ -123,30 +123,50 @@
   }
 }
 
-
 /*---------clients page---------*/
 
 .page-content.clients-page {
   padding-right: 30px;
 
-  @include respond-max(1024){
+  @include respond-max(1024) {
     padding-right: 0;
   }
 }
 
-
-/*---------About page---------*/
-
+/*---------About-Services page---------*/
 .page-content__wrap.about-page {
-  height: auto;
-  min-height: 100vh;
+  padding: 70px;
+  @include respond-max(1024) {
+    padding: 30px 15px 100px;
+  }
 }
 
-.page-content.about-page{
-  min-height: 700px;
+.page-content__wrap.services-page {
+  padding: 70px;
+  @include respond-max(1024) {
+    padding: 30px 15px 100px;
+  }
+}
+
+.page-content.about-page {
   padding: 50px 0 50px 70px;
   @include respond-max(1024) {
-    height: auto;
     padding: 0;
   }
 }
+
+.page-content.services-page {
+  padding: 50px 0 50px 70px;
+  @include respond-max(1024) {
+    padding: 0;
+  }
+}
+
+/*---------Contact---------*/
+.page-content.contact-page {
+  padding: 50px 0 50px 70px;
+  @include respond-max(1024) {
+    padding: 0;
+  }
+}
+

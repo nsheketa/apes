@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg enable-background="new 0 0 533 175" version="1.1" viewBox="0 0 533 175" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+<line x1="7" x2="7" y1="52" y2="171" fill="none" stroke="#010101" stroke-dasharray="5" stroke-miterlimit="10" stroke-width="2"/>
+<line x1="205" x2="19" y1="39" y2="39" fill="none" stroke="#010101" stroke-dasharray="5" stroke-miterlimit="10" stroke-width="2"/>
+			<polyline points="373 46 373 1 206 1 206 46" fill="#F5F6F4" opacity=".6"/>
+			<line x1="369" x2="255" y1="1" y2="1" fill="none" stroke="#181919" stroke-width="2"/>
+			<polyline points="369 1 373 1 373 46 206 46 206 32" fill="none" stroke="#181919" stroke-width="2"/>
+		<text transform="translate(239.82 34.578)" fill="#010101" font-family="'AvenirNextCondensed-DemiBold'" font-size="30">Creative</text>
+			<polyline points="330 103 330 73 533 73 533 103" fill="#F5F6F4" opacity=".6"/>
+				<rect x="329" y="73" width="203" height="30" fill="none" opacity=".6" stroke="#010101" stroke-miterlimit="10" stroke-width="2"/>
+				<text transform="translate(336.93 92.739)" fill="#010101" font-family="'AvenirNextCondensed-DemiBold'" font-size="16.578">Storyline development</text>
+			<polyline points="330 139 330 109 472 109 472 139" fill="#F5F6F4" opacity=".6"/>
+				<rect x="329" y="109" width="142" height="30" fill="none" opacity=".6" stroke="#010101" stroke-miterlimit="10" stroke-width="2"/>
+				<text transform="translate(345.2 129.74)" fill="#010101" font-family="'AvenirNextCondensed-DemiBold'" font-size="16.578">Scriptwriting</text>
+			<polyline points="330 174 330 144 472 144 472 174" fill="#F5F6F4" opacity=".6"/>
+				<rect x="329" y="144" width="142" height="30" fill="none" opacity=".6" stroke="#010101" stroke-miterlimit="10" stroke-width="2"/>
+				<text transform="translate(351.55 164.74)" fill="#010101" font-family="'AvenirNextCondensed-DemiBold'" font-size="16.578">Storyboard</text>
+	<polyline points="267 47 267 161 333 161" fill="none" stroke="#010101" stroke-dasharray="5" stroke-miterlimit="10" stroke-width="2"/>
+		<line x1="330" x2="266" y1="123" y2="123" fill="none" stroke="#010101" stroke-dasharray="5" stroke-miterlimit="10" stroke-width="2"/>
+		<line x1="330" x2="268" y1="87" y2="87" fill="none" stroke="#010101" stroke-dasharray="5" stroke-miterlimit="10" stroke-width="2"/>
+<circle cx="9.5" cy="41.5" r="8.5" fill="none" stroke="#010101" stroke-miterlimit="10" stroke-width="2"/>
+</svg>
+e-dasharray="5" points="267,47 267,161 
+		333,161 	"/>
+	
+		<line fill="none" stroke="#010101" stroke-width="2" stroke-miterlimit="10" stroke-dasharray="5" x1="330" y1="123" x2="266" y2="123"/>
+	
+		<line fill="none" stroke="#010101" stroke-width="2" stroke-miterlimit="10" stroke-dasharray="5" x1="330" y1="87" x2="268" y2="87"/>
+</g>
+<circle fill="none" stroke="#010101" stroke-width="2" stroke-miterlimit="10" cx="9.5" cy="41.5" r="8.5"/>
+</svg>

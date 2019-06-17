@@ -174,7 +174,7 @@ function workDetailAnimation(){
 
             .fromTo(item_03_list, 0.3, {opacity: 0}, {opacity: 1});
 
-        $('.page-content__wrap.work-page').addClass('was-animated');
+        $('.page-content__wrap.work-detail-page').addClass('was-animated');
     }
 }
 
@@ -249,6 +249,164 @@ function clientsPageAnimation() {
     }
 }
 
+//about page animation
+function aboutPageAnimation() {
+    var tlAbout = new TimelineMax({
+            repeat: 0,
+            ease: Power3.easeInOut
+        }),
+        item_00_01_wrap = $('.page-content__wrap.about-page'),
+        item_00_01_nav = $('.page-nav.about-page'),
+        item_00_01_header_mob = $('.header.about-page'),
+
+        item_01_frame = $('.page__frame.about-page'),
+        item_01_socials = $('.page-socials.about-page'),
+
+        item_02_title = $('.about__heading'),
+        item_02_info = $('.about__heading-info'),
+
+        item_03_people_left = $('.about-row__people--left'),
+        item_03_people_right = $('.about-row__people--right'),
+        item_03_people_center = $('.about-row__people-item--center'),
+        item_03_people = $('.about-row__people'),
+
+        item_04_content = $('.about__content-wrap');
+
+    if (isMobile()) {
+        tlAbout.to(item_00_01_wrap, 0.3, {opacity: 1})
+            .staggerFromTo(item_00_01_header_mob, 0.3, {opacity: 0}, {opacity: 1}, '+=0.2')
+            .staggerFromTo(item_01_socials, 0.2, {opacity: 0}, {opacity: 1}, '+=0.1')
+
+            .fromTo(item_02_title, 0.2, {opacity: 0}, {opacity: 1})
+            .fromTo(item_02_info, 0.2, {opacity: 0}, {opacity: 1})
+
+            .fromTo(item_03_people_left, 0.2, {opacity: 0}, {opacity: 1})
+            .fromTo(item_03_people_center, 0.2, {opacity: 0}, {opacity: 1})
+            .fromTo(item_03_people_right, 0.2, {opacity: 0}, {opacity: 1})
+
+            .fromTo(item_04_content, 0.2, {opacity: 0}, {opacity: 1});
+
+        $('.page-content__wrap.about-page').addClass('was-animated');
+    } else {
+        tlAbout.to(item_00_01_wrap, 0.3, {opacity: 1})
+            .fromTo(item_00_01_nav, 0.3, {opacity: 0}, {opacity: 1})
+            .staggerFromTo(item_01_frame, 0.3, {opacity: 0}, {opacity: 1}, 0.2, 'work-detail-frame')
+            .staggerFromTo(item_01_socials, 0.2, {opacity: 0}, {opacity: 1}, 0.2, 'work-detail-frame')
+
+            .staggerFromTo(item_02_title, 0.2, {opacity: 0}, {opacity: 1}, 0.1, 'border')
+            .staggerFromTo(item_02_info, 0.2, {opacity: 0}, {opacity: 1}, 0.1, 'border')
+
+            .fromTo(item_03_people, 0.2, {opacity: 0}, {opacity: 1})
+            .fromTo(item_03_people_center, 0.2, {opacity: 0}, {opacity: 1})
+            .fromTo(item_03_people_left, 0.2, {opacity: 0}, {opacity: 1})
+            .fromTo(item_03_people_right, 0.2, {opacity: 0}, {opacity: 1})
+
+            .fromTo(item_04_content, 0.2, {opacity: 0}, {opacity: 1});
+
+        $('.page-content__wrap.about-page').addClass('was-animated');
+    }
+}
+
+//services page animation
+function servicesPageAnimation() {
+    var tlServices = new TimelineMax({
+            repeat: 0,
+            ease: Power3.easeInOut
+        }),
+        item_00_01_wrap = $('.page-content__wrap.services-page'),
+        item_00_01_nav = $('.page-nav.services-page'),
+        item_00_01_header_mob = $('.header.services-page'),
+
+        item_01_frame = $('.page__frame.services-page'),
+        item_01_socials = $('.page-socials.services-page'),
+
+        item_02_title = $('.services__info-wrap'),
+
+        item_03_sales = $('.services__img-sales'),
+        item_03_creative = $('.services__img-creative'),
+        item_03_filming = $('.services__img-filming'),
+        item_03_production = $('.services__img-production'),
+        item_03_after = $('.services__img-after');
+
+    if (isMobile()) {
+        tlServices.to(item_00_01_wrap, 0.3, {opacity: 1})
+            .fromTo(item_00_01_header_mob, 0.3, {opacity: 0}, {opacity: 1})
+            .fromTo(item_01_socials, 0.2, {opacity: 0}, {opacity: 1})
+
+            .fromTo(item_02_title, 0.2, {opacity: 0}, {opacity: 1})
+
+            .fromTo(item_03_sales, 0.2, {opacity: 0}, {opacity: 1})
+            .fromTo(item_03_creative, 0.2, {opacity: 0}, {opacity: 1})
+            .fromTo(item_03_filming, 0.2, {opacity: 0}, {opacity: 1})
+            .fromTo(item_03_production, 0.2, {opacity: 0}, {opacity: 1})
+            .fromTo(item_03_after, 0.2, {opacity: 0}, {opacity: 1});
+
+        $('.page-content__wrap.services-page').addClass('was-animated');
+    } else {
+        tlServices.to(item_00_01_wrap, 0.3, {opacity: 1})
+            .fromTo(item_00_01_nav, 0.3, {opacity: 0}, {opacity: 1})
+            .staggerFromTo(item_01_frame, 0.3, {opacity: 0}, {opacity: 1}, 0.2, 'work-detail-frame')
+            .staggerFromTo(item_01_socials, 0.2, {opacity: 0}, {opacity: 1}, 0.2, 'work-detail-frame')
+
+            .staggerFromTo(item_02_title, 0.2, {opacity: 0}, {opacity: 1}, 0.1, 'border')
+
+            .staggerFromTo(item_03_sales, 0.4, {opacity: 0}, {opacity: 1}, 0.3, 'scheme')
+            .staggerFromTo(item_03_creative, 0.3, {opacity: 0}, {opacity: 1}, 0.3, 'scheme')
+            .staggerFromTo(item_03_filming, 0.4, {opacity: 0}, {opacity: 1}, 0.3, 'scheme')
+            .staggerFromTo(item_03_production, 0.4, {opacity: 0}, {opacity: 1}, 0.3, 'scheme')
+            .staggerFromTo(item_03_after, 0.4, {opacity: 0}, {opacity: 1}, 0.3, 'scheme');
+
+        $('.page-content__wrap.services-page').addClass('was-animated');
+    }
+}
+
+//contact page animation
+function contactPageAnimation() {
+    var tlContact = new TimelineMax({
+            repeat: 0,
+            ease: Power3.easeInOut
+        }),
+        item_00_01_wrap = $('.page-content__wrap.contact-page'),
+        item_00_01_nav = $('.page-nav.contact-page'),
+        item_00_01_header_mob = $('.header.contact-page'),
+
+        item_01_frame = $('.page__frame.contact-page'),
+        item_01_socials = $('.page-socials.contact-page'),
+
+        item_02_title = $('.contact__heading'),
+        item_02_map = $('.contact-inner__map'),
+
+        item_03_info = $('.contact-inner__info'),
+        item_03_form = $('.contact-inner__form-wrap');
+
+    if (isMobile()) {
+        tlContact.to(item_00_01_wrap, 0.3, {opacity: 1})
+            .staggerFromTo(item_00_01_header_mob, 0.3, {opacity: 0}, {opacity: 1}, '+=0.2')
+            .staggerFromTo(item_01_socials, 0.2, {opacity: 0}, {opacity: 1}, '+=0.1')
+
+            .fromTo(item_02_map, 0.2, {opacity: 0}, {opacity: 1})
+            .fromTo(item_02_title, 0.2, {opacity: 0}, {opacity: 1})
+
+            .fromTo(item_03_form, 0.2, {opacity: 0}, {opacity: 1})
+            .fromTo(item_03_info, 0.2, {opacity: 0}, {opacity: 1});
+
+        $('.page-content__wrap.contact-page').addClass('was-animated');
+    } else {
+        tlContact.to(item_00_01_wrap, 0.3, {opacity: 1})
+            .staggerFromTo(item_00_01_nav, 0.3, {opacity: 0}, {opacity: 1}, 0.2, 'contact-frame')
+            .staggerFromTo(item_01_frame, 0.3, {opacity: 0}, {opacity: 1}, 0.2, 'contact-frame')
+            .staggerFromTo(item_01_socials, 0.3, {opacity: 0}, {opacity: 1}, 0.2, 'contact-frame')
+
+            .fromTo(item_02_map, 0.3, {opacity: 0}, {opacity: 1})
+            .fromTo(item_02_title, 0.3, {opacity: 0}, {opacity: 1})
+
+            .fromTo(item_03_info, 0.4, {opacity: 0}, {opacity: 1} )
+            .fromTo(item_03_form, 0.3, {opacity: 0}, {opacity: 1});
+
+        $('.page-content__wrap.contact-page').addClass('was-animated');
+    }
+}
+
 $(document).ready(function () {
     var $body, options, content;
     var scrolling_down, scrolling_up, scroll, scroll_down, scroll_up;
@@ -313,12 +471,26 @@ $(document).ready(function () {
 
     scroll = 0;
 
+    function wheelScrollHandle(){
+        $('.scroll-list__wrap').on('mousewheel', function (e) {
+            if(e.originalEvent.detail > 0 || e.originalEvent.wheelDelta < 0 ) {
+                $('.list-scroll__link--up').removeClass('is-inactive');
+            }
+            else{
+                $('.list-scroll__link--down').removeClass('is-inactive');
+            }
+            scroll = $('.scroll-list__wrap').scrollTop();
+        });
+    }
+
     function pageScrollDown() {
         $('.list-scroll__link--down').on('mouseenter', function (e) {
             var wrap = $('.scroll-list__wrap'),
                 wrapScrollTop = wrap.scrollTop(),
                 wrapScrollH = wrap.prop("scrollHeight"),
                 wrapHeight = wrap.outerHeight(true);
+
+            scroll = $('.scroll-list__wrap').scrollTop();
 
             scrolling_down = setInterval(function () {
                 $('.list-scroll__link--up').removeClass('is-inactive');
@@ -346,7 +518,9 @@ $(document).ready(function () {
         $('.list-scroll__link--up').on('mouseenter', function (e) {
                 var wrap = $('.scroll-list__wrap');
 
-                scrolling_up = setInterval(function () {
+            scroll = $('.scroll-list__wrap').scrollTop();
+
+            scrolling_up = setInterval(function () {
                     $('.list-scroll__link--down').removeClass('is-inactive');
                     if (scroll >= 50) {
                         wrap.animate({
@@ -458,7 +632,7 @@ $(document).ready(function () {
         });
     }
 
-    //clients page
+    //about page
 
 
     //Smooth page transitions
@@ -507,6 +681,7 @@ $(document).ready(function () {
             resetWorkScroll();
             pageScrollDown();
             pageScrollUp();
+            wheelScrollHandle();
             workPageAnimation();
             workMobScroll();
 
@@ -516,6 +691,10 @@ $(document).ready(function () {
 
             clientsPageAnimation();
 
+            aboutPageAnimation();
+            servicesPageAnimation();
+
+            contactPageAnimation();
         }
     };
 
@@ -526,6 +705,7 @@ $(document).ready(function () {
 
     pageScrollDown();
     pageScrollUp();
+    wheelScrollHandle();
     workMobScroll();
 
     workDetailExitAnimation();
@@ -543,6 +723,9 @@ $(window).on('load', function () {
     workPageAnimation();
     workDetailAnimation();
     clientsPageAnimation();
+    aboutPageAnimation();
+    servicesPageAnimation();
+    contactPageAnimation();
 
     $('.main-scene').removeClass('is-loading').addClass('is-loaded');
     $('.page-content__wrap').addClass('was-animated');
