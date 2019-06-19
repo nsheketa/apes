@@ -20,25 +20,69 @@
 .contact__heading{
   margin-bottom: 30px;
   position: relative;
+  height: 90px;
   img{
-    width: 100%;
+    width: auto;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  @include respond-max(1440){
+    height: 70px;
   }
   @include respond-max(1024) {
     max-width: 90%;
+    height: auto;
     margin: 70px auto;
     padding-top: 40px;
+    img{
+      position: relative;
+      top: auto;
+      right: auto;
+      width: 100%;
+      height: auto;
+    }
   }
 }
 
 .contact-inner__map{
   position: relative;
-  margin-left: -90px;
+  margin-left: -87px;
   //height: calc(100vh - 393px);
   height: calc(100vh - 427px);
   overflow: hidden;
+  top: 5px;
 
+  @include respond-max(1440){
+    top: 25px;
+  }
   @include respond-max(1024) {
-    @include center();
+    top: auto;
+    margin: 0 -15px;
+    height: auto;
+  }
+}
+
+.contact-inner__map-img{
+  position: absolute;
+  bottom: -12px;
+  left: -101px;
+  width: auto;
+  max-width: none;
+  height: 100%;
+  @include respond-max(1280){
+    left: -174px;
+  }
+  @include respond-max(1024){
+    left: auto;
+    right: auto;
+    bottom: auto;
+    position: relative;
+    margin: auto;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
   }
 }
 
@@ -47,8 +91,8 @@
   top: 50%;
   left: 50%;
   margin: auto;
-  width: inherit;
-  height: inherit;
+  //width: inherit;
+  //height: inherit;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);

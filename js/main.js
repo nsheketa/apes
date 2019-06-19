@@ -132,7 +132,7 @@ function workPageAnimation() {
 }
 
 //work detail page animation
-function workDetailAnimation(){
+function workDetailAnimation() {
     var tlWorkDetail = new TimelineMax({
             repeat: 0,
             ease: Power3.easeInOut
@@ -170,7 +170,7 @@ function workDetailAnimation(){
             .staggerFromTo(item_01_line_right, 0.2, {opacity: 0}, {opacity: 1}, 0.2, 'border')
             .fromTo(item_01_content, 0.2, {opacity: 0}, {opacity: 1})
             .fromTo(item_01_back_link, 0.2, {opacity: 0}, {opacity: 1})
-            .fromTo(item_01_graphics, 0.2, {opacity: 0, x: -50}, {opacity: 1, x:0})
+            .fromTo(item_01_graphics, 0.2, {opacity: 0, x: -50}, {opacity: 1, x: 0})
 
             .fromTo(item_03_list, 0.3, {opacity: 0}, {opacity: 1});
 
@@ -267,10 +267,11 @@ function aboutPageAnimation() {
 
         item_03_people_brain = $('.about-row_people-brain'),
         item_03_people_left = $('.about-row__people--jerry'),
-        item_03_people_right = $('.about-row__people-hoi'),
+        item_03_people_right = $('.about-row__people--hoi'),
         item_03_people_center = $('.about-row__people-item--center'),
         item_03_people = $('.about-row__people'),
 
+        item_04_link = $('.about__link-wrap'),
         item_04_content = $('.about__content-wrap');
 
     if (isMobile()) {
@@ -281,10 +282,9 @@ function aboutPageAnimation() {
             .fromTo(item_02_title, 0.2, {opacity: 0}, {opacity: 1})
             .fromTo(item_02_info, 0.2, {opacity: 0}, {opacity: 1})
 
-            .fromTo(item_03_people_left, 0.2, {opacity: 0}, {opacity: 1})
             .fromTo(item_03_people_center, 0.2, {opacity: 0}, {opacity: 1})
-            .fromTo(item_03_people_right, 0.2, {opacity: 0}, {opacity: 1})
 
+            .fromTo(item_04_link, 0.2, {opacity: 0}, {opacity: 1})
             .fromTo(item_04_content, 0.2, {opacity: 0}, {opacity: 1});
 
         $('.page-content__wrap.about-page').addClass('was-animated');
@@ -298,10 +298,12 @@ function aboutPageAnimation() {
             .staggerFromTo(item_02_info, 0.2, {opacity: 0}, {opacity: 1}, 0.1, 'border')
 
             .fromTo(item_03_people, 0.2, {opacity: 0}, {opacity: 1})
-            .fromTo(item_03_people_brain, 0.2, {opacity: 0}, {opacity: 1})
-            .fromTo(item_03_people_center, 0.2, {opacity: 0}, {opacity: 1})
-            .fromTo(item_03_people_left, 0.2, {opacity: 0}, {opacity: 1})
-            .fromTo(item_03_people_right, 0.2, {opacity: 0}, {opacity: 1})
+            .fromTo(item_03_people_brain, 0.3, {opacity: 0}, {opacity: 1})
+            .fromTo(item_03_people_center, 0.3, {opacity: 0}, {opacity: 1})
+            .staggerFromTo(item_03_people_left, 0.2, {opacity: 0}, {opacity: 1}, 0.2, 'about-people')
+            .staggerFromTo(item_03_people_right, 0.2, {opacity: 0}, {opacity: 1}, 0.2, 'about-people')
+
+            .fromTo(item_04_link, 0.2, {opacity: 0}, {opacity: 1})
 
             .fromTo(item_04_content, 0.2, {opacity: 0}, {opacity: 1});
 
@@ -328,7 +330,9 @@ function servicesPageAnimation() {
         item_03_creative = $('.services__img-creative'),
         item_03_filming = $('.services__img-filming'),
         item_03_production = $('.services__img-production'),
-        item_03_after = $('.services__img-after');
+
+        item_03_after = $('.services__img-after'),
+        item_04_link = $('.services__link-wrap');
 
     if (isMobile()) {
         tlServices.to(item_00_01_wrap, 0.3, {opacity: 1})
@@ -336,6 +340,7 @@ function servicesPageAnimation() {
             .fromTo(item_01_socials, 0.2, {opacity: 0}, {opacity: 1})
 
             .fromTo(item_02_title, 0.2, {opacity: 0}, {opacity: 1})
+            .fromTo(item_04_link, 0.2, {opacity: 0}, {opacity: 1})
 
             .fromTo(item_03_sales, 0.2, {opacity: 0}, {opacity: 1})
             .fromTo(item_03_creative, 0.2, {opacity: 0}, {opacity: 1})
@@ -356,7 +361,9 @@ function servicesPageAnimation() {
             .staggerFromTo(item_03_creative, 0.3, {opacity: 0}, {opacity: 1}, 0.3, 'scheme')
             .staggerFromTo(item_03_filming, 0.4, {opacity: 0}, {opacity: 1}, 0.3, 'scheme')
             .staggerFromTo(item_03_production, 0.4, {opacity: 0}, {opacity: 1}, 0.3, 'scheme')
-            .staggerFromTo(item_03_after, 0.4, {opacity: 0}, {opacity: 1}, 0.3, 'scheme');
+            .staggerFromTo(item_03_after, 0.4, {opacity: 0}, {opacity: 1}, 0.3, 'scheme')
+
+            .staggerFromTo(item_04_link, 0.2, {opacity: 0}, {opacity: 1}, '+=0.1');
 
         $('.page-content__wrap.services-page').addClass('was-animated');
     }
@@ -402,7 +409,7 @@ function contactPageAnimation() {
             .fromTo(item_02_map, 0.3, {opacity: 0}, {opacity: 1})
             .fromTo(item_02_title, 0.3, {opacity: 0}, {opacity: 1})
 
-            .fromTo(item_03_info, 0.4, {opacity: 0}, {opacity: 1} )
+            .fromTo(item_03_info, 0.4, {opacity: 0}, {opacity: 1})
             .fromTo(item_03_form, 0.3, {opacity: 0}, {opacity: 1});
 
         $('.page-content__wrap.contact-page').addClass('was-animated');
@@ -473,12 +480,12 @@ $(document).ready(function () {
 
     scroll = 0;
 
-    function wheelScrollHandle(){
+    function wheelScrollHandle() {
         $('.scroll-list__wrap').on('mousewheel', function (e) {
-            if(e.originalEvent.detail > 0 || e.originalEvent.wheelDelta < 0 ) {
+            if (e.originalEvent.detail > 0 || e.originalEvent.wheelDelta < 0) {
                 $('.list-scroll__link--up').removeClass('is-inactive');
             }
-            else{
+            else {
                 $('.list-scroll__link--down').removeClass('is-inactive');
             }
             scroll = $('.scroll-list__wrap').scrollTop();
@@ -520,9 +527,9 @@ $(document).ready(function () {
         $('.list-scroll__link--up').on('mouseenter', function (e) {
                 var wrap = $('.scroll-list__wrap');
 
-            scroll = $('.scroll-list__wrap').scrollTop();
+                scroll = $('.scroll-list__wrap').scrollTop();
 
-            scrolling_up = setInterval(function () {
+                scrolling_up = setInterval(function () {
                     $('.list-scroll__link--down').removeClass('is-inactive');
                     if (scroll >= 50) {
                         wrap.animate({
@@ -608,8 +615,8 @@ $(document).ready(function () {
 
     // grid = $('.masonry__grid').masonry(masonryOptions);
 
-    function workDetailExitAnimation(){
-        if(!isMobile()){
+    function workDetailExitAnimation() {
+        if (!isMobile()) {
             $('.work-detail__return-link').on('click', function (e) {
                 e.preventDefault();
                 var href = $(this).attr('href');
@@ -621,9 +628,9 @@ $(document).ready(function () {
         }
     }
 
-    function workDetailPopupInit(){
+    function workDetailPopupInit() {
         $('.work-detail__list-link').magnificPopup({
-            type:'image',
+            type: 'image',
             disableOn: 200,
             mainClass: 'mfp-fade',
             removalDelay: 160,

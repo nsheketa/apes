@@ -1,3 +1,10 @@
+.services__link-wrap{
+  margin-top: -20px;
+  text-align: center;
+  width: 100%;
+  max-width: 100%;
+}
+
 .services__wrap {
   //padding-top: 250px;
   padding-bottom: 50px;
@@ -17,15 +24,18 @@
   position: absolute;
   right: 20px;
   //top: 50px;
-  top: -50px;
+  //top: -50px;
+  top: 33px;
   padding-right: 30px;
   @include respond-max(1400){
     max-width: 536px;
     top: -90px;
+    top: 24px;
   }
   @include respond-max(1200){
     max-width: 444px;
-    top: -140px;
+    //top: -140px;
+    top: 27px;
   }
   @include respond-max(1024){
     position: relative;
