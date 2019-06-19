@@ -14,10 +14,6 @@ body {
 
   @include respond-max(1024){
     background: url("#{$imgUrl}general/bg-mob.jpg")repeat-y center /100% auto;
-    //&.landing-page{
-    //  -webkit-background-size: cover;
-    //  background-size: cover;
-    //}
   }
 }
 

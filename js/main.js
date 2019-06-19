@@ -265,8 +265,9 @@ function aboutPageAnimation() {
         item_02_title = $('.about__heading'),
         item_02_info = $('.about__heading-info'),
 
-        item_03_people_left = $('.about-row__people--left'),
-        item_03_people_right = $('.about-row__people--right'),
+        item_03_people_brain = $('.about-row_people-brain'),
+        item_03_people_left = $('.about-row__people--jerry'),
+        item_03_people_right = $('.about-row__people-hoi'),
         item_03_people_center = $('.about-row__people-item--center'),
         item_03_people = $('.about-row__people'),
 
@@ -297,6 +298,7 @@ function aboutPageAnimation() {
             .staggerFromTo(item_02_info, 0.2, {opacity: 0}, {opacity: 1}, 0.1, 'border')
 
             .fromTo(item_03_people, 0.2, {opacity: 0}, {opacity: 1})
+            .fromTo(item_03_people_brain, 0.2, {opacity: 0}, {opacity: 1})
             .fromTo(item_03_people_center, 0.2, {opacity: 0}, {opacity: 1})
             .fromTo(item_03_people_left, 0.2, {opacity: 0}, {opacity: 1})
             .fromTo(item_03_people_right, 0.2, {opacity: 0}, {opacity: 1})

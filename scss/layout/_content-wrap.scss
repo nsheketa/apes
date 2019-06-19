@@ -58,6 +58,17 @@
   }
 }
 
+.copyright{
+  position: absolute;
+  bottom: -30px;
+  left: 0;
+  font-size: 12px;
+
+  @include respond-max(1024){
+    display: none;
+  }
+}
+
 /*---------Inner pages---------*/
 .page-content__wrap.inner-pages {
 
@@ -95,6 +106,13 @@
 }
 
 /*--------Landing page---------*/
+
+.page-content__wrap.landing-page{
+  @include respond-max(576){
+    background: url("#{$imgUrl}general/bg.jpg")repeat center /cover;
+  }
+}
+
 .page-content.landing-page {
   @include display-flex();
   @include ai-flex-center();

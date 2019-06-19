@@ -33,7 +33,8 @@
 .contact-inner__map{
   position: relative;
   margin-left: -90px;
-  height: calc(100vh - 393px);
+  //height: calc(100vh - 393px);
+  height: calc(100vh - 427px);
   overflow: hidden;
 
   @include respond-max(1024) {
@@ -51,6 +52,8 @@
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  width: 1400px;
+  height: auto;
 }
 
 

@@ -91,14 +91,22 @@
             </header>
 
             <div class="landing__animation-wrap">
-                <video class="landing__animation-video" webkit-playsinline="playsinline"
+                <video class="landing__animation-video hide-in-mob" webkit-playsinline="playsinline"
                        playsinline="playsinline" muted="muted" autoplay="autoplay" preload="auto" width="1660"
                        height="auto">
                     <source src="video/landing.mp4" type="video/mp4">
                     <source src="video/landing.webm" type="video/webm">
                     Your browser does not support the video tag.
                 </video>
-                <img src="img/landing/landing.gif" class="landing-animation__overlay" alt="">
+                <video class="landing__animation-video show-in-mob" webkit-playsinline="playsinline"
+                       playsinline="playsinline" muted="muted" autoplay="autoplay" preload="auto" width="1660"
+                       height="auto">
+                    <source src="video/landing-mob.mp4" type="video/mp4">
+                    <source src="video/landing-mob.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+                <img src="img/landing/landing.gif" class="landing-animation__overlay hide-in-mob" alt="">
+                <img src="img/landing/landing.gif" class="landing-animation__overlay show-in-mob" alt="">
             </div>
 
             <div class="landing__production">
@@ -168,6 +176,8 @@
                     </li>
                 </ul>
             </nav>
+
+            <div class="copyright">Copyright ©2019 APES Production</div>
         </div>
     </div>
 
