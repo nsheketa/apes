@@ -29,7 +29,9 @@ function landingAnimation() {
         item_05_02_production_line = $('.landing__production-line--right'),
         item_06_heading = $('.landing__heading'),
 
-        item_07_showreel = $('.landing__production-showreel');
+        item_07_showreel = $('.landing__production-showreel'),
+
+        item_08_plane = $('.landing-animation__img-play');
 
     // item_08_plane = $(''),
 
@@ -42,8 +44,8 @@ function landingAnimation() {
 
             .staggerFromTo(item_05_production_text, 0.3, {opacity: 0}, {opacity: 1}, 0.2, 'title')
             .staggerFromTo(item_06_heading, 0.3, {opacity: 0}, {opacity: 1}, 0.2, 'title')
-            .staggerFromTo(item_07_showreel, 0.4, {opacity: 0}, {opacity: 1}, '+=0.2');
-        //+plane
+            .staggerFromTo(item_07_showreel, 0.4, {opacity: 0}, {opacity: 1}, 0.2, 'float-items')
+            .staggerFromTo(item_08_plane, 0.4, {opacity: 0}, {opacity: 1}, 0.2, 'float-items');
 
         $('.page-content__wrap.landing-page').addClass('was-animated');
 
@@ -62,7 +64,8 @@ function landingAnimation() {
             .staggerFromTo(item_05_production_text, 0.4, {opacity: 0}, {opacity: 1}, 0.2, 'title')
             .staggerFromTo(item_06_heading, 0.4, {opacity: 0}, {opacity: 1}, 0.2, 'title')
 
-            .staggerFromTo(item_07_showreel, 0.4, {opacity: 0}, {opacity: 1}, '+=0.4');
+            .staggerFromTo(item_07_showreel, 0.4, {opacity: 0}, {opacity: 1}, 0.4, 'float-items')
+            .staggerFromTo(item_08_plane, 0.4, {opacity: 0}, {opacity: 1}, 0.4, 'float-items');
         //+plane
 
         $('.page-content__wrap.landing-page').addClass('was-animated');
@@ -384,6 +387,8 @@ function contactPageAnimation() {
 
         item_02_title = $('.contact__heading'),
         item_02_map = $('.contact-inner__map'),
+        item_02_map_moving = $('.contact-inner__map-img.is-moving'),
+        item_02_map_static = $('.contact-inner__map-img.is-static'),
 
         item_03_info = $('.contact-inner__info'),
         item_03_form = $('.contact-inner__form-wrap');
@@ -393,8 +398,10 @@ function contactPageAnimation() {
             .staggerFromTo(item_00_01_header_mob, 0.3, {opacity: 0}, {opacity: 1}, '+=0.2')
             .staggerFromTo(item_01_socials, 0.2, {opacity: 0}, {opacity: 1}, '+=0.1')
 
-            .fromTo(item_02_map, 0.2, {opacity: 0}, {opacity: 1})
             .fromTo(item_02_title, 0.2, {opacity: 0}, {opacity: 1})
+            .fromTo(item_02_map_moving, 0.2, {opacity: 0}, {display:'block', opacity: 1})
+            .to(item_02_map_moving, 0, {delay: 2.5, display: 'none'})
+            .fromTo(item_02_map_static, 0, {opacity: 0}, {display:'block', opacity: 1})
 
             .fromTo(item_03_form, 0.2, {opacity: 0}, {opacity: 1})
             .fromTo(item_03_info, 0.2, {opacity: 0}, {opacity: 1});
@@ -406,8 +413,10 @@ function contactPageAnimation() {
             .staggerFromTo(item_01_frame, 0.3, {opacity: 0}, {opacity: 1}, 0.2, 'contact-frame')
             .staggerFromTo(item_01_socials, 0.3, {opacity: 0}, {opacity: 1}, 0.2, 'contact-frame')
 
-            .fromTo(item_02_map, 0.3, {opacity: 0}, {opacity: 1})
+            .fromTo(item_02_map_moving, 0.2, {opacity: 0}, {opacity: 1})
             .fromTo(item_02_title, 0.3, {opacity: 0}, {opacity: 1})
+            .to(item_02_map_moving, 0, {delay: 2.5, opacity: 0})
+            .fromTo(item_02_map_static, 0, {opacity: 0}, {opacity: 1})
 
             .fromTo(item_03_info, 0.4, {opacity: 0}, {opacity: 1})
             .fromTo(item_03_form, 0.3, {opacity: 0}, {opacity: 1});
@@ -606,14 +615,6 @@ $(document).ready(function () {
     }
 
     //Work project page
-    masonryOptions = {
-        itemSelector: '.work-detail__list-item',
-        columnWidth: '.grid-sizer',
-        percentPosition: true,
-        isAnimated: false
-    };
-
-    // grid = $('.masonry__grid').masonry(masonryOptions);
 
     function workDetailExitAnimation() {
         if (!isMobile()) {
@@ -641,7 +642,15 @@ $(document).ready(function () {
         });
     }
 
-    //about page
+    //contact page
+    function mapHandle() {
+
+        setTimeout(function () {
+            $('.contact-inner__map-img').hide();
+            $('.contact-inner__map-img.is-static').show();
+        }, 600)
+
+    }
 
 
     //Smooth page transitions
@@ -704,6 +713,8 @@ $(document).ready(function () {
             servicesPageAnimation();
 
             contactPageAnimation();
+            // setTimeout( mapHandle,600);
+
         }
     };
 
@@ -719,6 +730,9 @@ $(document).ready(function () {
 
     workDetailExitAnimation();
     workDetailPopupInit();
+
+    // setTimeout( mapHandle,600);
+    // mapHandle();
 
     $(window).resize(function () {
         if (!isMobile()) {

@@ -257,7 +257,7 @@
   @include size(150px, 60px);
   position: absolute;
   bottom: 45px;
-  z-index: 1;
+  z-index: 0;
 }
 
 .about-row__people-project {
@@ -283,6 +283,7 @@
 
 .about-row_people-brain {
   position: relative;
+  z-index: 1;
 
   img {
     width: 150px;
@@ -324,6 +325,9 @@
   }
   @include respond-max(1024) {
     margin-top: 80px;
+    &:after{
+      display: none;
+    }
   }
 }
 

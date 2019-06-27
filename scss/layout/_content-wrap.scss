@@ -108,11 +108,16 @@
 /*--------Landing page---------*/
 
 .page-content__wrap.landing-page{
+  overflow-y: hidden;
   @include respond-max(576){
     background: url("#{$imgUrl}general/bg.jpg")repeat center /cover;
   }
 }
-
+@media screen and (max-width: 1024px) and (max-height: 812px) and (orientation: landscape){
+  .page-content__wrap.landing-page {
+    overflow-y: visible;
+  }
+}
 .page-content.landing-page {
   @include display-flex();
   @include ai-flex-center();
@@ -121,7 +126,8 @@
   @include respond-max(1024) {
     @include flex-nowrap();
     @include flex-direction-col();
-    @include jc-space-between();
+    //@include jc-space-between();
+    @include jc-flex-center();
   }
 }
 

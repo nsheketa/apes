@@ -71,6 +71,13 @@
   width: auto;
   max-width: none;
   height: 100%;
+
+  &.is-moving{
+    //opacity: 1;
+  }
+  &.is-static{
+    opacity: 0;
+  }
   @include respond-max(1280){
     left: -174px;
   }
@@ -83,6 +90,9 @@
     width: 100%;
     max-width: 100%;
     height: auto;
+    &.is-moving{
+      display: none;
+    }
   }
 }
 
