@@ -32,7 +32,6 @@
     overflow-x: hidden;
     overflow-y: visible;
     border: 3px solid $textColor;
-
   }
 
   @include respond-max(576) {
@@ -44,16 +43,6 @@
   .page-content__wrap {
     padding: 50px 70px;
   }
-}
-
-.page-content__wrap-bg{
-  background: url("#{$imgUrl}general/bg.jpg")repeat center /cover;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
 }
 
 .page-content {
@@ -170,8 +159,6 @@
 /*---------About-Services page---------*/
 .page-content__wrap.about-page {
   padding: 70px;
-  height: auto;
-  overflow: visible;
   @include respond-max(1024) {
     padding: 30px 15px 100px;
   }
@@ -185,8 +172,7 @@
 }
 
 .page-content.about-page {
-  //padding: 50px 0 50px 70px;
-  padding: 50px 0 0px 70px;
+  padding: 50px 0 50px 70px;
   @include respond-max(1024) {
     padding: 0;
   }

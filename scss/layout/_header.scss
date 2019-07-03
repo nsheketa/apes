@@ -7,7 +7,8 @@
   right: 0;
   top: 0;
   padding: 10px 15px;
-  background: url("#{$imgUrl}general/bg-mob.jpg")repeat-y center /100% auto;
+  //background: url("#{$imgUrl}general/bg-mob.jpg")repeat-y center /100% auto;
+  background: url("#{$imgUrl}general/bg.jpg")repeat-y top /100% auto;
   border: 3px solid $textColor;
   border-bottom: none;
   z-index: 110;

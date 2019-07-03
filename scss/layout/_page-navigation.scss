@@ -1,8 +1,6 @@
 .page-nav {
   position: absolute;
-  top: 35px;
   top: 90px;
-  left: -39px;
   left: -55px;
   width: auto;
   padding: 30px 0 50px;
@@ -29,7 +27,7 @@
     height: 100vh;
     padding-top: 95px;
     padding-bottom: 105px;
-    background: url("#{$imgUrl}general/bg-mob.jpg") repeat-y top /100% auto;
+    background: url("#{$imgUrl}general/bg.jpg") no-repeat top /cover;
     border: 3px solid $textColor;
     border-right: none;
     border-left: none;
@@ -229,7 +227,9 @@
   text-transform: uppercase;
   color: $textColor;
   letter-spacing: 2px;
-  @include transition-03();
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
   max-width: inherit;
   max-height: inherit;
   @include center();

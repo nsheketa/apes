@@ -1,40 +1,37 @@
 .services__link-wrap{
-  margin-top: -20px;
+  position: relative;
+  top: -40px;
   text-align: center;
   width: 100%;
   max-width: 100%;
 }
 
 .services__wrap {
-  //padding-top: 250px;
   padding-bottom: 50px;
+
+  @include respond-max(1024){
+    padding-top: 11px;
+  }
 }
 
 .services__wrap-inner {
   position: relative;
-  height: 100%;
-  min-height: 100vh;
   padding: 0 20px;
 }
 
 .services__info-wrap {
   margin-left: auto;
   max-width: 609px;
-  //margin-top: 30px;
   position: absolute;
   right: 20px;
-  //top: 50px;
-  //top: -50px;
   top: 33px;
   padding-right: 30px;
   @include respond-max(1400){
     max-width: 536px;
-    top: -90px;
     top: 24px;
   }
   @include respond-max(1200){
     max-width: 444px;
-    //top: -140px;
     top: 27px;
   }
   @include respond-max(1024){
@@ -96,8 +93,6 @@
     content: '';
     display: block;
     position: absolute;
-    //bottom: -239px;
-    //height: 225px;
     bottom: -150px;
     height: 140px;
     width: 2px;
@@ -105,32 +100,20 @@
     background: url("#{$imgUrl}general/separator-vertical.svg") no-repeat center /cover;
   }
 
-  @include respond-max(1500){
-    &:after{
-      //bottom: -309px;
-      //height: 292px;
-    }
-  }
   @include respond-max(1400){
     &:after{
-      //bottom: -206px;
-      //height: 193px;
       bottom: -146px;
     }
   }
 
   @include respond-max(1350){
     &:after{
-      //bottom: -246px;
-      //height: 235px;
       bottom: -186px;
       height: 170px;
     }
   }
   @include respond-max(1200){
     &:after{
-      //bottom: -167px;
-      //height: 155px;
       bottom: -158px;
       height: 144px;
     }
@@ -205,10 +188,6 @@
   border-bottom: 2px dashed #000;
   border-left: 2px dashed #000;
   z-index: 0;
-  @include respond-max(1200){
-    //bottom: -10px;
-    //left: -10px;
-  }
   @include respond-max(1024){
     border: none;
     border-top: 2px dashed #000;
@@ -266,15 +245,9 @@
 }
 
 .services__img-sales {
-  //width: 492px;
-  //max-width: 492px;
-  //margin-top: 129px;
   width: 420px;
   max-width: 420px;
   margin-top: 50px;
-  @include respond-max(1500) {
-    //margin-top: 200px;
-  }
   @include respond-max(1400) {
     width: 390px;
     max-width: 390px;
@@ -300,11 +273,9 @@
 }
 
 .services__img-icon-ear {
-  //width: 50px;
   width: 44px;
   @include animation(showreel, 15, 0, infinite);
   top: -25px;
-  //right: 134px;
   right: 113px;
 
   @include respond-max(1400){
@@ -325,11 +296,8 @@
 }
 
 .services__img-creative {
-  //width: 660px;
-  //max-width: 660px;
   width: 590px;
   max-width: 590px;
-  //margin-left: 154px;
   margin-left: 89px;
   @include respond-max(1400){
     width: 540px;
@@ -356,11 +324,9 @@
 }
 
 .services__img-icon-heart {
-  //width: 65px;
   width: 58px;
   @include animation(showreel, 19, 2, infinite);
   top: -59px;
-  //left: 226px;
   left: 206px;
   @include respond-max(1400){
     top: -40px;
@@ -388,8 +354,6 @@
 }
 
 .services__img-filming {
-  //width: 570px;
-  //max-width: 570px;
   width: 500px;
   max-width: 500px;
   top: -49px;
@@ -418,12 +382,8 @@
 }
 
 .services__img-icon-eye {
-  //width: 100px;
   width: 91px;
   @include animation(showreel, 21, -5, infinite);
-  //top: 28px;
-  //left: 196px;
-  top: 18px;
   left: 169px;
   @include respond-max(1400) {
     top: 15px;
@@ -447,8 +407,6 @@
 }
 
 .services__img-production {
-  //width: 430px;
-  //max-width: 430px;
   width: 350px;
   max-width: 350px;
   margin-left: auto;
@@ -476,11 +434,8 @@
 }
 
 .services__img-icon-hand {
-  //width: 70px;
   width: 63px;
   @include animation(showreel, 21, 0, infinite);
-  //top: -37px;
-  //right: 245px;
   top: -41px;
   right: 196px;
   @include respond-max(1400){
@@ -504,12 +459,6 @@
 .services__img-after {
   @include flex(1 0 auto);
   position: absolute;
-  //width: calc(100% - 601px);
-  //height: 80px;
-  //left: -64px;
-  //right: 0;
-  //margin: auto;
-  //top: 0;
   width: calc(100% - 521px);
   height: 80px;
   left: -34px;
@@ -526,7 +475,6 @@
   }
   @include respond-max(1200){
     left: -108px;
-    //top: -10px;
     top: 20px;
     width: calc(100% - 338px);
   }

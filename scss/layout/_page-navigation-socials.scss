@@ -20,7 +20,8 @@
     padding: 20px 0;
     border: 3px solid $textColor;
     border-top: none;
-    background: url("#{$imgUrl}general/bg-mob.jpg")repeat-y top/100% auto;
+    //background: url("#{$imgUrl}general/bg-mob.jpg")repeat-y top/100% auto;
+    background: url("#{$imgUrl}general/bg.jpg")repeat-y bottom/100% auto;
     z-index: 110;
     &.work-page{
       background-position: center;

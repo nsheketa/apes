@@ -399,9 +399,9 @@ function contactPageAnimation() {
             .staggerFromTo(item_01_socials, 0.2, {opacity: 0}, {opacity: 1}, '+=0.1')
 
             .fromTo(item_02_title, 0.2, {opacity: 0}, {opacity: 1})
-            .fromTo(item_02_map_moving, 0.2, {opacity: 0}, {display:'block', opacity: 1})
+            .fromTo(item_02_map_moving, 0.2, {opacity: 0}, {display: 'block', opacity: 1})
             .to(item_02_map_moving, 0, {delay: 2.5, display: 'none'})
-            .fromTo(item_02_map_static, 0, {opacity: 0}, {display:'block', opacity: 1})
+            .fromTo(item_02_map_static, 0, {opacity: 0}, {display: 'block', opacity: 1})
 
             .fromTo(item_03_form, 0.2, {opacity: 0}, {opacity: 1})
             .fromTo(item_03_info, 0.2, {opacity: 0}, {opacity: 1});
@@ -649,9 +649,51 @@ $(document).ready(function () {
             $('.contact-inner__map-img').hide();
             $('.contact-inner__map-img.is-static').show();
         }, 600)
-
     }
 
+    $('.about-scroll__link').on('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        var href = $(this).attr('href');
+        $('body, html').animate({
+            scrollTop: $('.about-page__section' + href).offset().top
+        }, 700)
+    });
+
+    function aboutMenuScroll() {
+        if ($('.page-content__wrap').hasClass('about-page')) {
+            var section = $('.about-page__section');
+            var link = $('.page-nav__list-about');
+
+            link.each(function (i, el) {
+                var id = $(this).attr('data-id');
+                var $this = $(this);
+
+                var aboutScene = new ScrollMagic.Scene({
+                    triggerElement: id,
+                    offset: 0,
+                    triggerHook: 0.5,
+                    reverse: true,
+                    duration: $('.about-page__section' + id).outerHeight()
+                }).on('enter', function () {
+                    $('.page-nav__list-about').removeClass('is-active');
+                    $this.addClass('is-active')
+                })
+                // .addIndicators()
+                    .addTo(controller);
+            });
+        }
+    }
+
+    function aboutLinkHandle() {
+        $('.page-nav__list-about a').on('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            $(this).parent().siblings('.page-nav__list-about').removeClass('is-active');
+            $(this).parent().addClass('is-active');
+            location.href = $(this).attr('href');
+        });
+    }
 
     //Smooth page transitions
     //https://www.javascripting.com/view/smoothstate-js#built-with-smoothstatejs
@@ -712,9 +754,10 @@ $(document).ready(function () {
             aboutPageAnimation();
             servicesPageAnimation();
 
-            contactPageAnimation();
-            // setTimeout( mapHandle,600);
+            aboutMenuScroll();
+            aboutLinkHandle();
 
+            contactPageAnimation();
         }
     };
 
@@ -731,8 +774,8 @@ $(document).ready(function () {
     workDetailExitAnimation();
     workDetailPopupInit();
 
-    // setTimeout( mapHandle,600);
-    // mapHandle();
+    aboutMenuScroll();
+    aboutLinkHandle();
 
     $(window).resize(function () {
         if (!isMobile()) {
